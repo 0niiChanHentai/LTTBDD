@@ -1,23 +1,16 @@
-class Laptop {
-  int id;
-  String name;
-  int ram;
-
-  Laptop({required this.id, required this.name, required this.ram});
-
-  void printDetails() {
-    print("Laptop ID: $id");
-    print("Laptop name: $name");
-    print("Laptop RAM: $ram GB");
-  }
-}
-
 void main() {
-  Laptop laptop1 = Laptop(id: 1, name: "Dell Inspiron", ram: 8);
-  Laptop laptop2 = Laptop(id: 2, name: "Lenovo ThinkPad", ram: 16);
-  Laptop laptop3 = Laptop(id: 3, name: "HP Spectre", ram: 32);
+  Map<String, String> phoneBook = {
+    'Alice': '1234567',
+    'Bob': '2345678',
+    'Charlie': '3456789',
+    'Dave': '4567890',
+    'Eve': '5678901',
+  };
 
-  laptop1.printDetails();
-  laptop2.printDetails();
-  laptop3.printDetails();
+  var keysWithLengthFour = phoneBook.keys.where((key) => key.length == 4);
+
+  print('Keys with length 4:');
+  for (var key in keysWithLengthFour) {
+    print(key);
+  }
 }
