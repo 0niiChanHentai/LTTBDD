@@ -1,5 +1,4 @@
 void main() {
-  for (int i = 0; i < 5; i++) {
-    print('hello ${i + 1}');
-  }
+  double a = 2.2222222222222222222;
+  print(a.toStringAsFixed(2));
 }
