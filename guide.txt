@@ -1,1 +1,50 @@
 .toStringAsFixed(...) : Làm tròn đến ... số sau dấu " , "
+int nhap = int.parse(stdin.readLineSync()!) : nhập
+----------------------------------------------------------
+void main() {
+  List<String> friendNames = ['John', 'Amy', 'David', 'Sarah', 'Alice', 'Brian', 'Angela'];
+  String nameStartingWithA = friendNames.where((name) => name.startsWith('A')).first;
+  print('Name starting with A: $nameStartingWithA');
+}
+----------------------------------------------------------
+void main() {
+  List<String> names = ['A', 'B'];
+  for (String name in names) {
+    print(name);
+  }
+}
+----------------------------------------------------------
+
+----------------------------------------------------------
+class Con {
+    int tuoi;
+
+    Con({required this.tuoi});
+
+    void xuat() {
+
+    }
+}
+
+void main(){
+
+}
+----------------------------------------------------------
+class Con {
+  int _tuoi;
+
+  Con({required int tuoi}) : _tuoi = tuoi;
+
+  int get tuoi => _tuoi;
+  set tuoi(int tuoi) => _tuoi = tuoi;
+
+  void xuat() {
+    print(tuoi);
+  }
+}
+
+void main() {
+  Con c = Con(tuoi: 14);
+
+  c.xuat();
+}
