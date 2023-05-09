@@ -8,9 +8,12 @@ class CounterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Container(
-        child: Text('Xin chào!'),
-      ),
+      home: Scaffold(
+          appBar: AppBar(title: Text('Counter App')),
+          body: Center(
+            child: Text('Xin chào!',
+                style: TextStyle(fontSize: 30, color: Colors.red)),
+          )),
     );
   }
 }
