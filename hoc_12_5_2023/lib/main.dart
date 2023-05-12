@@ -9,20 +9,23 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: SizedBox(
-            width: 48.0,
-            height: 48.0,
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                color: Colors.amber,
-              ),
-            ),
-          ),
-        ),
+    return MaterialApp(
+        home:
+        Container(
+      constraints: BoxConstraints.expand(
+        height:
+            Theme.of(context).textTheme.headlineMedium!.fontSize! * 1.1 + 200.0,
       ),
+      padding: const EdgeInsets.all(8.0),
+      color: Colors.blue[600],
+      alignment: Alignment.center,
+      transform: Matrix4.rotationZ(0.1),
+      child: Text('Hello World',
+          style: Theme.of(context)
+              .textTheme
+              .headlineMedium!
+              .copyWith(color: Colors.white)),
+    )
     );
   }
 }
