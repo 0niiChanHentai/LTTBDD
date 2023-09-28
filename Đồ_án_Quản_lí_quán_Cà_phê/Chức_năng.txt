@@ -53,3 +53,16 @@ Bảo mật & sao lưu dữ liệu:
 Phân quyền truy cập hệ thống.
 Sao lưu dữ liệu định kỳ.
 Bảo vệ dữ liệu khách hàng.
+-------------------------------------------------------------------
+Khi viết vào bài :
+
+Có các chức năng sau:
+Quản lí sản phẩm
+Quản lí đơn hàng
+Quản lí khách hàng
+Quản lí nhân viên
+Quản lí tài chính
+Quản lí khuyến mãi và giảm giá
+Quản lí nguyên liệu
+Quản lí bàn và khu vực chỗ ngồi
+Quản lí đặt hàng trực tuyến
