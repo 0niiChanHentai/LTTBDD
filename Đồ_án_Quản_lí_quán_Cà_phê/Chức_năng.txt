@@ -1,0 +1,55 @@
+Quản lý sản phẩm:
+
+Thêm, chỉnh sửa, xóa sản phẩm (tên sản phẩm, mô tả, giá, hình ảnh).
+Phân loại sản phẩm (ví dụ: espresso, cappuccino, latte, ...).
+Quản lý tồn kho (số lượng còn lại, nguyên liệu sử dụng).
+Quản lý đơn hàng:
+
+Nhận đơn hàng từ khách hàng.
+Xem chi tiết đơn hàng.
+Cập nhật trạng thái đơn hàng (đang xử lý, đã hoàn thành, đã hủy).
+In hóa đơn cho khách.
+Quản lý khách hàng:
+
+Thông tin cá nhân của khách hàng (tên, địa chỉ, số điện thoại).
+Lịch sử mua hàng của khách hàng.
+Khuyến mãi, giảm giá dành cho thành viên.
+Quản lý nhân viên:
+
+Thông tin nhân viên (tên, vị trí, liên hệ).
+Lịch làm việc của nhân viên.
+Phân quyền truy cập hệ thống cho nhân viên.
+Quản lý tài chính:
+
+Báo cáo doanh thu theo ngày, tuần, tháng.
+Chi phí (mua nguyên liệu, lương nhân viên, thuế, ...).
+Lợi nhuận ròng.
+Quản lý khuyến mãi & giảm giá:
+
+Tạo mã giảm giá.
+Thiết lập chương trình khuyến mãi.
+Quản lý nguyên liệu:
+
+Danh sách nguyên liệu (ví dụ: cà phê, sữa, đường, ...).
+Nhập hàng, kiểm tra tồn kho.
+Cảnh báo khi nguyên liệu sắp hết.
+Quản lý bàn & khu vực ngồi:
+
+Thêm, chỉnh sửa, xóa bàn.
+Đặt bàn trước cho khách.
+Hệ thống đặt hàng trực tuyến (nếu cần):
+
+Đặt hàng trực tuyến.
+Thanh toán trực tuyến.
+Theo dõi trạng thái đơn hàng.
+Hệ thống thông báo & cảnh báo:
+
+Cảnh báo khi nguyên liệu sắp hết.
+Thông báo khi có đơn hàng mới hoặc thay đổi trạng thái đơn hàng.
+Tùy chỉnh & cấu hình:
+Thiết lập thông tin cửa hàng (tên, địa chỉ, liên hệ).
+Tùy chỉnh giao diện và chức năng theo yêu cầu.
+Bảo mật & sao lưu dữ liệu:
+Phân quyền truy cập hệ thống.
+Sao lưu dữ liệu định kỳ.
+Bảo vệ dữ liệu khách hàng.
