@@ -1,0 +1,29 @@
+1. Phân tích và xác định yêu cầu (Tuần 1)
+
+Cả hai cùng tham gia thu thập yêu cầu, xác định chức năng và ưu tiên.
+Thành viên A phác thảo giao diện chính.
+Thành viên B bắt đầu xây dựng mô hình dữ liệu.
+2. Thiết kế cơ sở dữ liệu và giao diện (Tuần 2)
+
+Thành viên A tiếp tục thiết kế giao diện và lựa chọn framework/thư viện cho phía frontend.
+Thành viên B hoàn thiện thiết kế cơ sở dữ liệu và bắt đầu cài đặt cơ sở dữ liệu.
+3. Xây dựng chức năng cơ bản (Tuần 3)
+
+Thành viên A xây dựng giao diện cho quản lý sản phẩm và nguyên liệu.
+Thành viên B lập trình logic phía backend cho chức năng quản lý sản phẩm và nguyên liệu.
+4. Xây dựng chức năng nâng cao (Tuần 4)
+
+Thành viên A xây dựng giao diện cho quản lý đơn hàng, khách hàng, và nhân viên.
+Thành viên B lập trình logic phía backend cho các chức năng trên.
+5. Tích hợp chức năng và tối ưu hóa (Tuần 5)
+
+Thành viên A xây dựng giao diện cho quản lý tài chính và khuyến mãi.
+Thành viên B tích hợp và tối ưu hóa backend, đồng thời liên kết frontend và backend.
+6. Kiểm thử và gặp gỡ người dùng (Tuần 6)
+
+Cả hai cùng thực hiện kiểm thử hệ thống. Thành viên A tập trung vào kiểm thử giao diện và trải nghiệm người dùng, trong khi thành viên B tập trung vào kiểm thử logic và dữ liệu.
+Cùng nhau thu thập phản hồi từ người dùng.
+7. Hoàn thiện và triển khai (Tuần 7)
+
+Thành viên A hoàn thiện giao diện dựa trên phản hồi và tạo tài liệu hướng dẫn sử dụng.
+Thành viên B hoàn thiện phía backend, tiến hành triển khai hệ thống và chuẩn bị tài liệu bảo trì.
