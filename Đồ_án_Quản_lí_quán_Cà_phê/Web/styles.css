@@ -10,14 +10,14 @@ body, html {
 }
 
 .logo {
-    width: 20%; /* Đảm bảo chiều rộng của phần tử màu hồng là 20% màn hình */
-    height: 25%; /* Đặt chiều cao là toàn bộ màn hình */
-    float: left; /* Để nó nằm bên trái */
-    position: absolute; /* Đặt vị trí tuyệt đối để nó không ảnh hưởng đến các phần tử khác */
+    width: 20%;
+    height: 25%;
+    float: left;
+    position: absolute;
 }
 
 .tren_phai {
-    margin-left: 20%; /* Điều này sẽ đẩy phần tử .red-section về bên phải 20% */
+    margin-left: 20%;
     background-color: #4B3822;
     width: 80%;
     height: 25%;
@@ -32,11 +32,11 @@ body, html {
 
 .nut1 {
     display: block;
-    width: auto; /* giảm chiều rộng từ 90% xuống 70% */
-    margin: auto; /* Tăng khoảng cách trên và dưới giữa các nút */
+    width: auto;
+    margin: auto;
     padding: 10px;
-    background-color: #4B3822; /* màu nền cho nút */
-    color: #FFFACD; /* màu chữ */
+    background-color: #4B3822;
+    color: #FFFACD;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -51,44 +51,43 @@ body, html {
 
 */
 
-
 .duoi {
-    width: 100%;/**/
-    height: 75%; /* Phần còn lại của màn hình */
+    width: 100%;
+    height: 75%;
 }
 
 .menu {
     background-color: black;
-    width: 20%; /* Đặt chiều rộng là 1/5 màn hình */
-    height: 100%;/**/
+    width: 20%;
+    height: 100%;
     float: left;
 }
 
 .nut2 {
     display: block;
-    width: 90%; /* chiều rộng nút */
-    margin: 5% auto; /* canh giữa và thêm khoảng cách giữa các nút */
+    width: 90%;
+    margin: 5% auto;
     padding: 10px;
-    background-color: #4B3822; /* màu nền cho nút */
-    color: white; /* màu chữ */
+    background-color: #4B3822;
+    color: white;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .nut2:hover {
-    background-color: black; /* màu khi rê chuột lên nút */
+    background-color: black;
 }
 
 .thanh_ngang {
-    width: 60%; /* chiều rộng của thanh ngang */
-    height: 3px; /* độ dày của thanh ngang */
-    background-color: white; /* màu của thanh ngang */
-    margin: 5% auto; /* canh giữa và thêm khoảng cách trên và dưới */
+    width: 60%;
+    height: 3px;
+    background-color: white;
+    margin: 5% auto;
 }
 
 .noi_dung {
-    width: 80%; /* Phần còn lại của màn hình dọc */
+    width: 80%;
     height: 100%;
     float: left;
 }

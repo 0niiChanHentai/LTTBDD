@@ -15,7 +15,7 @@
             <button class="nut1">Zalo</button>
             <button class="nut1">Email</button>
             <audio controls autoplay>
-                <source src="a.mp3" type="audio/mpeg">
+                <source src="audio.mp3" type="audio/mpeg">
             </audio>
             <button class="nut1">Xin chào, Trần Công Minh</button>
         </div>
@@ -37,7 +37,7 @@
         <div class="noi_dung">
             <!--
             <video controls autoplay width=80% height=100%>
-                <source src="b.mp4" type="video/mp4">
+                <source src="video.mp4" type="video/mp4">
             </video>
             -->
             <div class="lich">
