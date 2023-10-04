@@ -47,9 +47,10 @@ body, html {
     border-radius: 20px;
 }
 
-/*
-
-*/
+.nut1 i {
+    margin-right: 5px;
+    font-size: 1.2em;
+}
 
 .duoi {
     width: 100%;
@@ -73,15 +74,34 @@ body, html {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-align: left;
+    padding-left: 20px;
 }
 
-.nut2:hover {
+.nut2:hover, .dang_xuat:hover {
     background-color: black;
+}
+
+.nut2 i, .dang_xuat i {
+    margin-right: 25px;
+    font-size: 1.2em;
+}
+
+.dang_xuat {
+    display: block;
+    width: 90%;
+    margin: 5% auto;
+    padding: 10px;
+    background-color: #4B3822;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .thanh_ngang {
     width: 60%;
-    height: 3px;
+    height: 1px;
     background-color: white;
     margin: 5% auto;
 }

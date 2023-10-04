@@ -4,35 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <img src="logo.png" class="logo">
     <div class="tren_phai">
         <div class="thanh_dieu_huong">
-            <button class="nut1">Trang chủ</button>
-            <button class="nut1">TikTok</button>
-            <button class="nut1">Facebook</button>
-            <button class="nut1">Zalo</button>
-            <button class="nut1">Email</button>
+            <button class="nut1">
+                <i class="fas fa-home"></i>
+                <p>Trang chủ</p>
+            </button>
+            <button class="nut1">
+                <i class="fa-brands fa-tiktok"></i>
+                <p>TikTok</p>
+            </button>
+            <button class="nut1">
+                <i class="fa-brands fa-facebook"></i>
+                <p>Facebook</p>
+            </button>
+            <button class="nut1">
+                <i>Z</i>
+                <p>Zalo</p>
+            </button>
+            <button class="nut1">
+                <i class="fa-regular fa-envelope"></i>
+                <p>Email</p>
+            </button>
             <audio controls autoplay>
                 <source src="audio.mp3" type="audio/mpeg">
             </audio>
-            <button class="nut1">Xin chào, Trần Công Minh</button>
+            <button class="nut1"><i class="fa-solid fa-circle-user"></i>Xin chào, Trần Công Minh</button>
         </div>
     </div>
     <div class="duoi">
         <div class="menu">
-            <button class="nut2">Sản phẩm</button>
-            <button class="nut2">Đơn hàng</button>
-            <button class="nut2">Khách hàng</button>
-            <button class="nut2">Nhân viên</button>
-            <button class="nut2">Tài chính</button>
-            <button class="nut2">Khuyến mãi và giảm giá</button>
-            <button class="nut2">Nguyên liệu</button>
-            <button class="nut2">Bàn và khu vực chỗ ngồi</button>
-            <button class="nut2">Đặt hàng trực tuyến</button>
+            <button class="nut2"><i class="fa-solid fa-mug-hot"></i>Sản phẩm</button>
+            <button class="nut2"><i class="fa-regular fa-paste"></i>Đơn hàng</button>
+            <button class="nut2"><i class="fa-solid fa-user"></i>Khách hàng</button>
+            <button class="nut2"><i class="fa-solid fa-users"></i>Nhân viên</button>
+            <button class="nut2"><i class="fa-solid fa-dollar-sign"></i>Tài chính</button>
+            <button class="nut2"><i class="fa-solid fa-tags"></i>Khuyến mãi và giảm giá</button>
+            <button class="nut2"><i class="fa-solid fa-seedling"></i>Nguyên liệu</button>
+            <button class="nut2"><i class="fa-solid fa-couch"></i>Bàn và khu vực chỗ ngồi</button>
+            <button class="nut2"><i class="fa-solid fa-cart-shopping"></i>Đặt hàng trực tuyến</button>
             <div class="thanh_ngang"></div>
-            <button class="nut2">Đăng xuất</button>
+            <button class="dang_xuat"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</button>
         </div>
         <div class="noi_dung">
             <!--
