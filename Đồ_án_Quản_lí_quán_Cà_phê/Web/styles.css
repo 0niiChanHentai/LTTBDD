@@ -5,8 +5,9 @@ body, html {
 }
 
 .chu_mau_trang {
-    text-align: center;
     color: white;
+    text-align: left;
+    padding-left: 25px;
 }
 
 .logo {
@@ -82,7 +83,7 @@ body, html {
     background-color: black;
 }
 
-.nut2 i, .dang_xuat i {
+.nut2 i, .dang_xuat i, .chu_mau_trang i {
     margin-right: 25px;
     font-size: 1.2em;
 }
