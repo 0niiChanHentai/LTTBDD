@@ -51,18 +51,28 @@
             <button class="dang_xuat"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</button>
         </div>
         <div class="noi_dung">
-            <!--
-            <video controls autoplay width=80% height=100%>
-                <source src="video.mp4" type="video/mp4">
-            </video>
-            -->
+            <div class="thong_ke"></div>
+            <div class="ho_tro">
             <div class="lich">
-                <iframe src="https://calendar.google.com/calendar/embed?src=trancongminh14042001%40gmail.com&ctz=Asia%2FHo_Chi_Minh" style="border: 0" width="100%" height="50%" frameborder="0" scrolling="no"></iframe>
-                <div class="note"></div>
-                <p>Số điện thoại: 0354220664</p>
-                <p>Địa chỉ: Số 6, Lô 5, Khu C2, Cát Bi, Hải An, Hải Phòng</p>
+                    <iframe src="https://calendar.google.com/calendar/embed?src=trancongminh14042001%40gmail.com&ctz=Asia%2FHo_Chi_Minh" style="border: 0" width="100%" height="50%" frameborder="0" scrolling="no"></iframe>
+                    <div class="note"></div>
+                    <p>Số điện thoại: 0354220664</p>
+                    <p>Địa chỉ: Số 6, Lô 5, Khu C2, Cát Bi, Hải An, Hải Phòng</p>
+                </div>
             </div>
         </div>
+        <!--
+        <div class="ho_tro">
+            <div class="nhiem_vu">
+                <div class="lich">
+                    <iframe src="https://calendar.google.com/calendar/embed?src=trancongminh14042001%40gmail.com&ctz=Asia%2FHo_Chi_Minh" style="border: 0" width="100%" height="50%" frameborder="0" scrolling="no"></iframe>
+                    <div class="note"></div>
+                    <p>Số điện thoại: 0354220664</p>
+                    <p>Địa chỉ: Số 6, Lô 5, Khu C2, Cát Bi, Hải An, Hải Phòng</p>
+                </div>
+            </div>
+        </div>
+        -->
     </div>
 </body>
 </html>

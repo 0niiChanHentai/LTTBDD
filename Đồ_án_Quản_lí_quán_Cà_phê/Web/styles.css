@@ -65,6 +65,13 @@ body, html {
     float: left;
 }
 
+.noi_dung {
+    background-color: blue;
+    width: 80%;
+    height: 100%;
+    float: right;
+}
+
 .nut2 {
     display: block;
     width: 90%;
@@ -107,10 +114,18 @@ body, html {
     margin: 5% auto;
 }
 
-.noi_dung {
-    width: 80%;
+.thong_ke {
+    background-color: pink;
+    width: 65%;
     height: 100%;
     float: left;
+}
+
+.ho_tro {
+    background-color: orangered;
+    width: 35%;
+    height: 100%;
+    float: right;
 }
 
 .lich {
