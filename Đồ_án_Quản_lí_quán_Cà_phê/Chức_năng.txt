@@ -66,3 +66,91 @@ Quản lí khuyến mãi và giảm giá
 Quản lí nguyên liệu
 Quản lí bàn và khu vực chỗ ngồi
 Quản lí đặt hàng trực tuyến
+-------------------------------------------------------------------
+Quản lí sản phẩm:
+
+Thêm, sửa, xóa sản phẩm.
+Đặt giá cho sản phẩm.
+Đặt hình ảnh và mô tả cho sản phẩm.
+Phân loại sản phẩm theo danh mục.
+Quản lí đơn hàng:
+
+Xem danh sách đơn hàng.
+Xem chi tiết từng đơn hàng.
+Cập nhật trạng thái đơn hàng (đang chế biến, đã hoàn thành, đã thanh toán,...).
+Hủy đơn hàng.
+Quản lí khách hàng:
+
+Thêm, sửa, xóa thông tin khách hàng.
+Xem lịch sử mua hàng của khách hàng.
+Phân loại khách hàng (thành viên, VIP,...).
+Quản lí nhân viên:
+
+Thêm, sửa, xóa thông tin nhân viên.
+Phân quyền truy cập hệ thống cho nhân viên.
+Theo dõi hiệu suất làm việc của nhân viên.
+Quản lí tài chính:
+
+Theo dõi doanh thu theo ngày, tuần, tháng.
+Chi phí và lợi nhuận.
+Thống kê báo cáo tài chính.
+Quản lí khuyến mãi và giảm giá:
+
+Tạo, sửa, xóa chương trình khuyến mãi hoặc mã giảm giá.
+Áp dụng khuyến mãi/mã giảm giá cho sản phẩm hoặc đơn hàng cụ thể.
+Theo dõi hiệu quả của các chương trình khuyến mãi.
+Quản lí nguyên liệu:
+
+Thêm, sửa, xóa nguyên liệu.
+Theo dõi số lượng tồn kho.
+Nhập kho và xuất kho nguyên liệu.
+Quản lí bàn và khu vực chỗ ngồi:
+
+Thêm, sửa, xóa bàn hoặc khu vực.
+Đặt chỗ trước cho khách hàng.
+Cập nhật trạng thái bàn (trống, có khách, đã đặt,...).
+Quản lí đặt hàng trực tuyến:
+
+Xem danh sách đơn hàng trực tuyến.
+Cập nhật trạng thái đơn hàng trực tuyến (đang chờ, đang giao, đã giao,...).
+Hủy đơn hàng trực tuyến.
+-------------------------------------------------------------------
+Monday.com:
+
+Ưu điểm:
+Giao diện trực quan, màu sắc và biểu tượng dễ nhìn.
+Có nhiều mẫu công việc để chọn lựa.
+Tích hợp nhiều ứng dụng và tiện ích mở rộng khác.
+Nhược điểm:
+Giá có thể hơi cao đối với doanh nghiệp nhỏ và cá nhân.
+Có thể hơi phức tạp đối với người mới bắt đầu.
+
+Asana.com:
+
+Ưu điểm:
+Cơ cấu tổ chức công việc rõ ràng.
+Miễn phí cho phiên bản cơ bản.
+Tích hợp nhiều tiện ích mở rộng và ứng dụng khác.
+Nhược điểm:
+Giao diện có thể hơi tải đối với người mới.
+Tính năng cao cấp đòi hỏi phí.
+
+Wrike.com:
+
+Ưu điểm:
+Tích hợp tính năng chỉnh sửa tài liệu trực tiếp.
+Có chế độ xem Gantt giúp lập lịch dễ dàng.
+Nhiều lựa chọn tùy chỉnh.
+Nhược điểm:
+Cần thời gian để làm quen với giao diện và tính năng.
+Giá có thể cao đối với người dùng cá nhân.
+
+Basecamp.com:
+
+Ưu điểm:
+Giao diện đơn giản, dễ sử dụng.
+Tất cả tính năng cơ bản đều miễn phí.
+Tích hợp công cụ chat và bảng thông báo.
+Nhược điểm:
+Tính năng nâng cao giới hạn và có thể không đáp ứng đủ nhu cầu của một số doanh nghiệp lớn.
+Không có chế độ xem Gantt hoặc biểu đồ khác.
