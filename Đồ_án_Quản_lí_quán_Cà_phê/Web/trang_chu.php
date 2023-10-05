@@ -56,13 +56,23 @@
                 <source src="video.mp4" type="video/mp4">
             </video>
             -->
-            <div class="lich">
-                <iframe src="https://calendar.google.com/calendar/embed?src=trancongminh14042001%40gmail.com&ctz=Asia%2FHo_Chi_Minh" style="border: 0" width="100%" height="50%" frameborder="0" scrolling="no"></iframe>
-                <div class="note"></div>
-                <p>Số điện thoại: 0354220664</p>
-                <p>Địa chỉ: Số 6, Lô 5, Khu C2, Cát Bi, Hải An, Hải Phòng</p>
+            <div class="thong_ke">
+                
+            </div>
+            <div class="ho_tro">
+                <div class="lich">
+                    <iframe src="https://calendar.google.com/calendar/embed?src=trancongminh14042001%40gmail.com&ctz=Asia%2FHo_Chi_Minh" style="border: 0" width="100%" height="50%" frameborder="0" scrolling="no"></iframe>
+                    <div class="note">
+
+                    </div>
+                    <div class="sdt_dia_chi">
+                        <p>Số điện thoại: 0354220664</p>
+                        <p>Địa chỉ: Số 6, Lô 5, Khu C2, Hải An, Hải Phòng</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
 </html>
+<p class="chu_mau_trang"><i class="fa-solid fa-users"></i>Nhân viên</p>

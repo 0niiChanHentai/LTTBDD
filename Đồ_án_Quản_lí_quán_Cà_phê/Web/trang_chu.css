@@ -66,7 +66,7 @@ body, html {
 }
 
 .noi_dung {
-    background-color: blue;
+    background-color: white;
     width: 80%;
     height: 100%;
     float: right;
@@ -115,15 +115,15 @@ body, html {
 }
 
 .thong_ke {
-    background-color: pink;
-    width: 65%;
+    background-color: white;
+    width: 70%;
     height: 100%;
     float: left;
 }
 
 .ho_tro {
-    background-color: orangered;
-    width: 35%;
+    background-color: white;
+    width: 30%;
     height: 100%;
     float: right;
 }
@@ -137,4 +137,9 @@ body, html {
     background-color: pink;
     width: auto;
     height: 35%;
+}
+
+.sdt_dia_chi {
+    color: black;
+    font-size: 18px;
 }

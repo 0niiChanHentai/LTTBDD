@@ -1,0 +1,38 @@
+.tim_kiem_them {
+    padding: 20px;
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.tim_kiem_them input[type="nhap"] {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.tim_kiem_them button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #4B3822;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.tim_kiem_them button:hover {
+    background-color: #A67C52;
+}
+
+.tim_kiem_them .action_group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.khoang_cach {
+    display: inline-block;
+    padding: 10px;
+    width: 5%;
+}

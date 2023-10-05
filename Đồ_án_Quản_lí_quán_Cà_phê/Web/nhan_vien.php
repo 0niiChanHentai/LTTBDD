@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="trang_chu.css">
+    <link rel="stylesheet" href="nhan_vien.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
@@ -51,28 +52,34 @@
             <button class="dang_xuat"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</button>
         </div>
         <div class="noi_dung">
-            <div class="thong_ke"></div>
-            <div class="ho_tro">
-            <div class="lich">
-                    <iframe src="https://calendar.google.com/calendar/embed?src=trancongminh14042001%40gmail.com&ctz=Asia%2FHo_Chi_Minh" style="border: 0" width="100%" height="50%" frameborder="0" scrolling="no"></iframe>
-                    <div class="note"></div>
-                    <p>Số điện thoại: 0354220664</p>
-                    <p>Địa chỉ: Số 6, Lô 5, Khu C2, Cát Bi, Hải An, Hải Phòng</p>
+            <!--
+            <video controls autoplay width=80% height=100%>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+            -->
+            <div class="thong_ke">
+                <div class="tim_kiem_them">
+                <form action="search_employee.php" method="GET">
+                    <input type="nhap" name="query" placeholder="Nhập tên hoặc mã nhân viên">
+                    <button type="submit">Tìm kiếm</button>
+                    <div class="khoang_cach"></div>
+                    <button type="submit">Thêm nhân viên</button>
+                </form>
                 </div>
             </div>
-        </div>
-        <!--
-        <div class="ho_tro">
-            <div class="nhiem_vu">
+            <div class="ho_tro">
                 <div class="lich">
                     <iframe src="https://calendar.google.com/calendar/embed?src=trancongminh14042001%40gmail.com&ctz=Asia%2FHo_Chi_Minh" style="border: 0" width="100%" height="50%" frameborder="0" scrolling="no"></iframe>
-                    <div class="note"></div>
-                    <p>Số điện thoại: 0354220664</p>
-                    <p>Địa chỉ: Số 6, Lô 5, Khu C2, Cát Bi, Hải An, Hải Phòng</p>
+                    <div class="note">
+
+                    </div>
+                    <div class="sdt_dia_chi">
+                        <p>Số điện thoại: 0354220664</p>
+                        <p>Địa chỉ: Số 6, Lô 5, Khu C2, Hải An, Hải Phòng</p>
+                    </div>
                 </div>
             </div>
         </div>
-        -->
     </div>
 </body>
 </html>
