@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="trang_chu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
@@ -51,13 +51,10 @@
             <button class="dang_xuat"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</button>
         </div>
         <div class="noi_dung">
-            <!--
-            <video controls autoplay width=80% height=100%>
-                <source src="video.mp4" type="video/mp4">
-            </video>
-            -->
             <div class="thong_ke">
-                
+                <video controls autoplay width=100% height=100%>
+                    <source src="video.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="ho_tro">
                 <div class="lich">
@@ -75,4 +72,3 @@
     </div>
 </body>
 </html>
-<p class="chu_mau_trang"><i class="fa-solid fa-users"></i>Nhân viên</p>
