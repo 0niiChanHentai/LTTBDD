@@ -67,16 +67,30 @@ border: 1px solid #888;
 width: 30%;
 }
 
-.close {
+.dong_cua_so {
 color: #aaa;
 float: right;
 font-size: 28px;
 font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.dong_cua_so:hover,
+.dong_cua_so:focus {
 color: black;
 text-decoration: none;
 cursor: pointer;
+}
+
+.input-group {
+display: flex;
+justify-content: flex-start;
+align-items: center;
+}
+
+.input-group label {
+width: 50%;  /* Đặt chiều rộng cố định cho label */
+}
+
+.input-group input {
+    width: 50%;  /* Cho phép input mở rộng và chiếm phần còn lại của dòng */
 }

@@ -61,15 +61,43 @@
             -->
             <div id="themNhanVienModal" class="modal">
                 <div class="modal-content">
-                    <span class="close">&times;</span>
+                    <span class="dong_cua_so">&times;</span>
                     <h2>Thêm nhân viên</h2>
                     <form id="themNhanVienForm">
-                    <label for="ten">Tên:</label>
-                    <input type="text" id="ten" name="ten">
-                    <label for="ma">Mã:</label>
-                    <input type="text" id="ma" name="ma">
+                    <div class="input-group">
+                        <label for="ten_day_du">Tên đầy đủ:</label>
+                        <input type="text" id="ten_day_du" name="ten_day_du">
+                    </div>
+                    <div class="khoang_cach"></div>
+                    <div class="input-group">
+                        <label for="ngay_thang_nam_sinh">Ngày tháng năm sinh:</label>
+                        <input type="text" id="ngay_thang_nam_sinh" name="ngay_thang_nam_sinh">
+                    </div>
+                    <div class="khoang_cach"></div>
+                    <div class="input-group">
+                        <label for="gioi_tinh">Giới tính:</label>
+                        <input type="text" id="gioi_tinh" name="gioi_tinh">
+                    </div>
+                    <div class="khoang_cach"></div>
+                    <div class="input-group">
+                        <label for="so_dien_thoai">Số điện thoại:</label>
+                        <input type="text" id="so_dien_thoai" name="so_dien_thoai">
+                    </div>
+                    <div class="khoang_cach"></div>
+                    <div class="input-group">
+                        <label for="dia_chi_email">Địa chỉ email:</label>
+                        <input type="text" id="dia_chi_email" name="dia_chi_email">
+                    </div>
+                    <div class="khoang_cach"></div>
+                    <div class="input-group">
+                        <label for="dia_chi_thuong_tru">Địa chỉ thường trú:</label>
+                        <input type="text" id="dia_chi_thuong_tru" name="dia_chi_thuong_tru">
+                    </div>
                     <!-- Thêm nội dung -->
-                    <input type="submit" value="Thêm">
+                    <div class="khoang_cach"></div>
+                    <div class="input-group">
+                        <input type="submit" value="Thêm">
+                    </div>
                     </form>
                 </div>
             </div>
