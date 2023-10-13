@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="trang_chu.css">
     <link rel="stylesheet" href="nhan_vien.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="nhan_vien.js" defer></script>
 </head>
+
 <body>
     <img src="logo.png" class="logo">
     <div class="tren_phai">
@@ -63,10 +65,26 @@
                     <input type="nhap" name="query" placeholder="Nhập tên hoặc mã nhân viên">
                     <button type="submit">Tìm kiếm</button>
                     <div class="khoang_cach"></div>
-                    <button type="submit">Thêm nhân viên</button>
+                    <button type="button">Thêm nhân viên</button>
                 </form>
                 </div>
             </div>
+<!---->
+            <div id="themNhanVienModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Thêm nhân viên</h2>
+                    <form id="themNhanVienForm">
+                    <label for="ten">Tên:</label>
+                    <input type="text" id="ten" name="ten">
+                    <label for="ma">Mã:</label>
+                    <input type="text" id="ma" name="ma">
+                    <!-- Thêm các trường thông tin khác tại đây -->
+                    <input type="submit" value="Thêm">
+                    </form>
+                </div>
+            </div>
+<!---->
             <div class="ho_tro">
                 <div class="lich">
                     <iframe src="https://calendar.google.com/calendar/embed?src=trancongminh14042001%40gmail.com&ctz=Asia%2FHo_Chi_Minh" style="border: 0" width="100%" height="50%" frameborder="0" scrolling="no"></iframe>
