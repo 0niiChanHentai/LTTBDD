@@ -37,8 +37,16 @@
     width: 5%;
 }
 
-.khung_noi_dung {
-    
+.khung_tren {
+    background-color: white;
+    width: 100%;
+    height: 15%;
+}
+
+.khung_duoi {
+    background-color: white;
+    width: 100%;
+    height: 85%;
 }
 
 .modal {

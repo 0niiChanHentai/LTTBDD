@@ -59,17 +59,6 @@
                 <source src="video.mp4" type="video/mp4">
             </video>
             -->
-            <div class="thong_ke">
-                <div class="tim_kiem_them">
-                <form action="search_employee.php" method="GET">
-                    <input type="nhap" name="query" placeholder="Nhập tên hoặc mã nhân viên">
-                    <button type="submit">Tìm kiếm</button>
-                    <div class="khoang_cach"></div>
-                    <button type="button">Thêm nhân viên</button>
-                </form>
-                </div>
-            </div>
-<!---->
             <div id="themNhanVienModal" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
@@ -79,12 +68,26 @@
                     <input type="text" id="ten" name="ten">
                     <label for="ma">Mã:</label>
                     <input type="text" id="ma" name="ma">
-                    <!-- Thêm các trường thông tin khác tại đây -->
+                    <!-- Thêm nội dung -->
                     <input type="submit" value="Thêm">
                     </form>
                 </div>
             </div>
-<!---->
+            <div class="thong_ke">
+                <div class="khung_tren">
+                    <div class="tim_kiem_them">
+                    <form action="search_employee.php" method="GET">
+                        <input type="nhap" name="query" placeholder="Nhập tên hoặc mã nhân viên">
+                        <button type="submit">Tìm kiếm</button>
+                        <div class="khoang_cach"></div>
+                        <button type="button">Thêm nhân viên</button>
+                    </form>
+                    </div>
+                </div>
+                <div class="khung_duoi">
+                    
+                </div>
+            </div>
             <div class="ho_tro">
                 <div class="lich">
                     <iframe src="https://calendar.google.com/calendar/embed?src=trancongminh14042001%40gmail.com&ctz=Asia%2FHo_Chi_Minh" style="border: 0" width="100%" height="50%" frameborder="0" scrolling="no"></iframe>
