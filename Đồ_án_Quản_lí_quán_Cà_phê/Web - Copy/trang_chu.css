@@ -1,0 +1,145 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.chu_mau_trang {
+    color: white;
+    text-align: left;
+    padding-left: 25px;
+}
+
+.logo {
+    width: 20%;
+    height: 25%;
+    float: left;
+    position: absolute;
+}
+
+.tren_phai {
+    margin-left: 20%;
+    background-color: #4B3822;
+    width: 80%;
+    height: 25%;
+}
+
+.thanh_dieu_huong {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.nut1 {
+    display: block;
+    width: auto;
+    margin: auto;
+    padding: 10px;
+    background-color: #4B3822;
+    color: #FFFACD;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nut1:hover {
+    background-color: #A67C52;
+    border-radius: 20px;
+}
+
+.nut1 i {
+    margin-right: 5px;
+    font-size: 1.2em;
+}
+
+.duoi {
+    width: 100%;
+    height: 75%;
+}
+
+.menu {
+    background-color: black;
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+
+.noi_dung {
+    background-color: white;
+    width: 80%;
+    height: 100%;
+    float: right;
+}
+
+.nut2 {
+    display: block;
+    width: 90%;
+    margin: 5% auto;
+    padding: 10px;
+    background-color: #4B3822;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.nut2:hover, .dang_xuat:hover {
+    background-color: black;
+}
+
+.nut2 i, .dang_xuat i, .chu_mau_trang i {
+    margin-right: 25px;
+    font-size: 1.2em;
+}
+
+.dang_xuat {
+    display: block;
+    width: 90%;
+    margin: 5% auto;
+    padding: 10px;
+    background-color: #4B3822;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.thanh_ngang {
+    width: 60%;
+    height: 1px;
+    background-color: white;
+    margin: 5% auto;
+}
+
+.thong_ke {
+    background-color: white;
+    width: 70%;
+    height: 100%;
+    float: left;
+}
+
+.ho_tro {
+    background-color: white;
+    width: 30%;
+    height: 100%;
+    float: right;
+}
+
+.lich {
+    height: 100%;
+    float: right;
+}
+
+.note {
+    background-color: pink;
+    width: auto;
+    height: 35%;
+}
+
+.sdt_dia_chi {
+    color: black;
+    font-size: 18px;
+}
