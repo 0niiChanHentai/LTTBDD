@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="trang_chu.css">
     <link rel="stylesheet" href="nhan_vien.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="nhan_vien.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
-
 </head>
+
 <body>
+
     <img src="logo.png" class="logo">
+
     <div class="tren_phai">
         <div class="thanh_dieu_huong">
             <button class="nut1">
@@ -37,10 +38,15 @@
             <audio controls autoplay>
                 <source src="audio.mp3" type="audio/mpeg">
             </audio>
-            <button class="nut1"><i class="fa-solid fa-circle-user"></i>Xin chào, Trần Công Minh</button>
+            <button class="nut1">
+                <i class="fa-solid fa-circle-user"></i>
+                Xin chào, Trần Công Minh
+            </button>
         </div>
     </div>
+
     <div class="duoi">
+
         <div class="menu">
             <button class="nut2"><i class="fa-solid fa-mug-hot"></i>Sản phẩm</button>
             <button class="nut2"><i class="fa-regular fa-paste"></i>Đơn hàng</button>
@@ -52,16 +58,22 @@
             <button class="nut2"><i class="fa-solid fa-couch"></i>Bàn và khu vực chỗ ngồi</button>
             <button class="nut2"><i class="fa-solid fa-cart-shopping"></i>Đặt hàng trực tuyến</button>
             <div class="thanh_ngang"></div>
-            <button class="dang_xuat"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</button>
+            <a href="dang_nhap.php">
+                <button class="dang_xuat">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Đăng xuất
+                </button>
+            </a>
         </div>
+
         <div class="noi_dung">
-<!----------------------------------------------------------------------------------------------------------------------------------------------->
+
             <!--
             <video controls autoplay width=80% height=100%>
                 <source src="video.mp4" type="video/mp4">
             </video>
             -->
-<!----------------------------------------------------------------------------------------------------------------------------------------------->
+
             <div id="themNhanVienModal" class="modal">
                 <div class="modal-content">
                     <span class="dong_cua_so">&times;</span>
@@ -108,6 +120,7 @@
             </div>
 <!----------------------------------------------------------------------------------------------------------------------------------------------->
             <div class="thong_ke">
+
                 <div class="khung_tren">
                     <div class="tim_kiem_them">
                         <form action="search_employee.php" method="GET">
@@ -128,6 +141,7 @@
                 <div class="khung_duoi">
                     
                 </div>
+
             </div>
 <!----------------------------------------------------------------------------------------------------------------------------------------------->
             <div class="ho_tro">
@@ -142,8 +156,14 @@
                     </div>
                 </div>
             </div>
-<!----------------------------------------------------------------------------------------------------------------------------------------------->
+
         </div>
+
     </div>
+    
+    <script src="nhan_vien.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
 </body>
+
 </html>

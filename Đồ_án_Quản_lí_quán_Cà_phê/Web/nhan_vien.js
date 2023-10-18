@@ -9,62 +9,40 @@ const btnNhapExcel = document.getElementById("nhapExcel");
 const inputExcel = document.getElementById("chonFileExcel");
 
 const showModal = () => modal.style.display = "block";
-const hideModal = () => {
-  modal.style.display = "none";
-  form.onsubmit = (e) => {
-    e.preventDefault();
-    const nhanVien = {
-      ten_day_du: document.getElementById("ten_day_du").value,
-      ngay_thang_nam_sinh: document.getElementById("ngay_thang_nam_sinh").value,
-      gioi_tinh: document.getElementById("gioi_tinh").value,
-      so_dien_thoai: document.getElementById("so_dien_thoai").value,
-      dia_chi_email: document.getElementById("dia_chi_email").value,
-      dia_chi_thuong_tru: document.getElementById("dia_chi_thuong_tru").value
-    };
-    addEmployee(nhanVien);
-  };
-};
-
-const renderEmployees = () => {
-  const khungDuoi = document.querySelector(".khung_duoi");
-  khungDuoi.innerHTML = "";
-  danhSachNhanVien.forEach((employee, index) => {
-    const nhanVienMoi = document.createElement("div");
-    nhanVienMoi.innerHTML = `
-      <p>${Object.values(employee).join(', ')}</p>
-      <button class="btnXoa" data-id="${index}">Xóa</button>
-      <button class="btnSua" data-id="${index}">Sửa</button>
-    `;
-    khungDuoi.appendChild(nhanVienMoi);
-  });
-};
+const hideModal = () => modal.style.display = "none";
 
 const addEmployee = (employee) => {
   danhSachNhanVien.push(employee);
-  renderEmployees();
-  hideModal();
-};
-
-const updateEmployee = (id) => {
-  const nhanVien = {
-    ten_day_du: document.getElementById("ten_day_du").value,
-    ngay_thang_nam_sinh: document.getElementById("ngay_thang_nam_sinh").value,
-    gioi_tinh: document.getElementById("gioi_tinh").value,
-    so_dien_thoai: document.getElementById("so_dien_thoai").value,
-    dia_chi_email: document.getElementById("dia_chi_email").value,
-    dia_chi_thuong_tru: document.getElementById("dia_chi_thuong_tru").value
-  };
-  danhSachNhanVien[id] = nhanVien;
-  renderEmployees();
+  const khungDuoi = document.querySelector(".khung_duoi");
+  const nhanVienMoi = document.createElement("div");
+  nhanVienMoi.innerHTML = `<p>${Object.values(employee).join(', ')}</p>`;
+  khungDuoi.appendChild(nhanVienMoi);
   hideModal();
 };
 
 const exportToExcel = (data) => {
-  // ... (không thay đổi)
+  const ws = XLSX.utils.json_to_sheet(data);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "NhanVien");
+  XLSX.writeFile(wb, "DanhSachNhanVien.xlsx");
 };
 
 const importFromExcel = (file) => {
-  // ... (không thay đổi)
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const data = e.target.result;
+    const workbook = XLSX.read(data, { type: 'binary' });
+    const sheet_name_list = workbook.SheetNames;
+    const xlData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
+    const khungGiua = document.querySelector(".khung_giua");
+    khungGiua.innerHTML = "";
+    xlData.forEach((row) => {
+      const div = document.createElement("div");
+      div.innerHTML = `<p>${JSON.stringify(row)}</p>`;
+      khungGiua.appendChild(div);
+    });
+  };
+  reader.readAsBinaryString(file);
 };
 
 btn.onclick = (event) => {
@@ -104,26 +82,4 @@ btnNhapExcel.addEventListener("click", () => {
 inputExcel.addEventListener("change", (e) => {
   const file = e.target.files[0];
   importFromExcel(file);
-});
-
-document.body.addEventListener("click", (event) => {
-  if (event.target.classList.contains("btnXoa")) {
-    const id = event.target.getAttribute("data-id");
-    danhSachNhanVien.splice(id, 1);
-    renderEmployees();
-  } else if (event.target.classList.contains("btnSua")) {
-    const id = event.target.getAttribute("data-id");
-    const nhanVien = danhSachNhanVien[id];
-    document.getElementById("ten_day_du").value = nhanVien.ten_day_du;
-    document.getElementById("ngay_thang_nam_sinh").value = nhanVien.ngay_thang_nam_sinh;
-    document.getElementById("gioi_tinh").value = nhanVien.gioi_tinh;
-    document.getElementById("so_dien_thoai").value = nhanVien.so_dien_thoai;
-    document.getElementById("dia_chi_email").value = nhanVien.dia_chi_email;
-    document.getElementById("dia_chi_thuong_tru").value = nhanVien.dia_chi_thuong_tru;
-    showModal();
-    form.onsubmit = (e) => {
-      e.preventDefault();
-      updateEmployee(id);
-    };
-  }
 });
