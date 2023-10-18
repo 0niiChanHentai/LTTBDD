@@ -1,0 +1,142 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    }
+    
+    .logo {
+    position: absolute;
+    float: left;
+    width: 20%;
+    height: 25%;
+    }
+    
+    .tren_phai {
+    margin-left: 20%;
+    width: 80%;
+    height: 25%;
+    background-color: #4B3822;
+    }
+    
+    .duoi {
+    width: 100%;
+    height: 75%;
+    }
+    
+    .menu {
+    float: left;
+    width: 20%;
+    height: 100%;
+    background-color: black;
+    }
+    
+    .noi_dung,
+    .thong_ke {
+    float: left;
+    height: 100%;
+    background-color: white;
+    }
+    
+    .noi_dung {
+    float: right;
+    width: 80%;
+    }
+    
+    .thong_ke {
+    width: 70%;
+    }
+    
+    .ho_tro,
+    .lich {
+    float: right;
+    height: 100%;
+    background-color: white;
+    }
+    
+    .ho_tro {
+    width: 30%;
+    }
+    
+    .note {
+    width: auto;
+    height: 35%;
+    background-color: pink;
+    }
+    
+    .thanh_dieu_huong {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    }
+    
+    .nut1,
+    .nut2,
+    .dang_xuat {
+    display: block;
+    width: auto;
+    margin: auto;
+    padding: 10px;
+    background-color: #4B3822;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    }
+    
+    .nut1 {
+    color: #FFFACD;
+    }
+    
+    .nut2,
+    .dang_xuat {
+    width: 90%;
+    margin: 5% auto;
+    color: white;
+    }
+    
+    .nut2 {
+    text-align: left;
+    padding-left: 20px;
+    }
+    
+    .nut1:hover,
+    .nut2:hover,
+    .dang_xuat:hover {
+    background-color: #A67C52;
+    border-radius: 20px;
+    }
+    
+    .nut2:hover,
+    .dang_xuat:hover {
+    background-color: black;
+    }
+    
+    .chu_mau_trang,
+    .sdt_dia_chi {
+    color: white;
+    text-align: left;
+    }
+    
+    .chu_mau_trang {
+    padding-left: 25px;
+    }
+    
+    .sdt_dia_chi {
+    color: black;
+    font-size: 18px;
+    }
+    
+    .nut1 i,
+    .nut2 i,
+    .dang_xuat i,
+    .chu_mau_trang i {
+    margin-right: 5px;
+    font-size: 1.2em;
+    }
+    
+    .thanh_ngang {
+    width: 60%;
+    height: 1px;
+    background-color: white;
+    margin: 5% auto;
+    }
