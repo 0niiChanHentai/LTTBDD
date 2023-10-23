@@ -1,0 +1,134 @@
+.chu_mau_trang {
+    color: white;
+    text-align: left;
+    padding-left: 25px;
+}
+
+.chu_mau_trang i {
+    margin-right: 25px;
+    font-size: 1.2em;
+}
+/*----------------------------------------------------------------------------------------------------------------------------------------------*/
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+}
+
+.dong_cua_so {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.dong_cua_so:hover, .dong_cua_so:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.bang_nhap {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.bang_nhap label {
+    width: 50%;
+}
+
+.bang_nhap input {
+    width: 50%;
+}
+
+.khoang_cach {
+    display: inline-block;
+    padding: 10px;
+    width: 5%;
+}
+/*----------------------------------------------------------------------------------------------------------------------------------------------*/
+.khung_tren {
+    background-color: white;
+    width: 100%;
+    height: 15%;
+}
+
+.tim_kiem_them {
+    padding: 20px;
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.tim_kiem_them input[type="nhap"] {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.tim_kiem_them button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #4B3822;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.tim_kiem_them button:hover {
+    background-color: #A67C52;
+}
+/*----------------------------------------------------------------------------------------------------------------------------------------------*/
+.khung_giua {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 20px;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    height: 10%;
+}
+
+#xuatExcel, #nhapExcel {
+    margin-right: 10px;
+    display: flex;
+    width: auto;
+    align-items: center;
+    padding: 10px;
+    background-color: #4B3822;
+    color: #FFFACD;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+#xuatExcel:hover, #nhapExcel:hover {
+    background-color: #A67C52;
+}
+
+#xuatExcel i, #nhapExcel i {
+    margin-right: 5px;
+    font-size: 1.2em;
+}
+/*----------------------------------------------------------------------------------------------------------------------------------------------*/
+.khung_duoi {
+    background-color: white;
+    width: 100%;
+    height: 75%;
+}

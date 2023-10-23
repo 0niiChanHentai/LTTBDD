@@ -23,7 +23,7 @@
 
             <button type="submit">Đăng nhập</button>
         </form>
-        <a href="#">Quên mật khẩu?</a>
+        <a href="https://www.facebook.com/trancong.minh.92317">Quên mật khẩu?</a>
     </div>
 
     <div class="anh">

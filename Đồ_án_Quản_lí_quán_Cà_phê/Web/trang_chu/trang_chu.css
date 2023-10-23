@@ -3,35 +3,30 @@ body, html {
     padding: 0;
     height: 100%;
 }
-
-.chu_mau_trang {
-    color: white;
-    text-align: left;
-    padding-left: 25px;
-}
-
+/*----------------------------------------------------------------------------------------------------------------------------------------------*/
 .logo {
+    position: absolute;
+    float: left;
     width: 20%;
     height: 25%;
-    float: left;
-    position: absolute;
-}
+}  
 
-.tren_phai {
-    margin-left: 20%;
-    background-color: #4B3822;
+.tren {
     width: 80%;
     height: 25%;
+    margin-left: 20%;
+    background-color: #4B3822;
 }
+  
 
-.thanh_dieu_huong {
+.can_chinh_tren {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
 
-.nut1 {
+.nut_tren {
     display: block;
     width: auto;
     margin: auto;
@@ -39,20 +34,21 @@ body, html {
     background-color: #4B3822;
     color: #FFFACD;
     border: none;
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
-}
+}  
 
-.nut1:hover {
+.nut_tren:hover {
     background-color: #A67C52;
     border-radius: 20px;
 }
 
-.nut1 i {
+.nut_tren i {
     margin-right: 5px;
     font-size: 1.2em;
 }
-
+/*----------------------------------------------------------------------------------------------------------------------------------------------*/
 .duoi {
     width: 100%;
     height: 75%;
@@ -65,14 +61,7 @@ body, html {
     float: left;
 }
 
-.noi_dung {
-    background-color: white;
-    width: 80%;
-    height: 100%;
-    float: right;
-}
-
-.nut2 {
+.nut_menu {
     display: block;
     width: 90%;
     margin: 5% auto;
@@ -86,13 +75,20 @@ body, html {
     padding-left: 20px;
 }
 
-.nut2:hover, .dang_xuat:hover {
+.nut_menu:hover, .dang_xuat:hover {
     background-color: black;
 }
 
-.nut2 i, .dang_xuat i, .chu_mau_trang i {
+.nut_menu i, .dang_xuat i {
     margin-right: 25px;
     font-size: 1.2em;
+}
+
+.thanh_ngang {
+    width: 60%;
+    height: 1px;
+    background-color: white;
+    margin: 5% auto;
 }
 
 .dang_xuat {
@@ -107,11 +103,11 @@ body, html {
     transition: background-color 0.3s;
 }
 
-.thanh_ngang {
-    width: 60%;
-    height: 1px;
+.noi_dung {
     background-color: white;
-    margin: 5% auto;
+    width: 80%;
+    height: 100%;
+    float: right;
 }
 
 .thong_ke {
@@ -121,25 +117,54 @@ body, html {
     float: left;
 }
 
-.ho_tro {
+.lich {
     background-color: white;
     width: 30%;
     height: 100%;
     float: right;
 }
+/**/
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+/**/
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
 
-.lich {
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
     height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+  
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+  
+.close {
+    color: #aaa;
     float: right;
+    font-size: 28px;
+    cursor: pointer;
 }
-
-.note {
-    background-color: pink;
-    width: auto;
-    height: 35%;
-}
-
-.sdt_dia_chi {
-    color: black;
-    font-size: 18px;
+  
+.icon-wrapper {
+    display: inline-block;
+    width: 50px;
+    border: 1px solid #4B3822;
+    padding: 0;
+    margin-right: 0;
 }
