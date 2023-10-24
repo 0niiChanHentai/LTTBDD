@@ -1,38 +1,31 @@
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-th, td {
-  border: 1px solid black;
-  padding: 8px;
-  text-align: center;
-}
-/* Existing styles */
-/* ... */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}  
 
-/* Modal styles */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.4);
+.tren {
+    width: 80%;
+    height: 25%;
+    margin-left: 20%;
+    background-color: #4B3822;
 }
 
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+.duoi {
+    width: 100%;
+    height: 75%;
 }
 
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  cursor: pointer;
+.menu {
+    background-color: black;
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+
+.noi_dung {
+    background-color: white;
+    width: 80%;
+    height: 100%;
+    float: right;
 }

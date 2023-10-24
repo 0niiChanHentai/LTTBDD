@@ -1,19 +1,11 @@
-// Khởi tạo biến
+
+// Initialize variables
 let currentMonth = new Date().getMonth();
 let currentYear = new Date().getFullYear();
 let events = {};
 let selectedDate;
 
-// Tài khoản
-document.addEventListener("DOMContentLoaded", function() {
-  const userMenu = document.querySelector(".userMenu");
-  userMenu.addEventListener("click", function() {
-    const dropdown = this.querySelector(".userDropdown");
-    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-  });
-});
-
-// Khởi tạo bản đồ
+// Initialize map
 let map;
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -22,7 +14,7 @@ function initMap() {
   });
 }
 
-// Mở cửa sổ modal để thêm/sửa sự kiện
+// Open modal to add/edit events
 function openModal(date) {
   selectedDate = date;
   const eventForDate = events[date] ? events[date].detail : "";
@@ -32,19 +24,19 @@ function openModal(date) {
   document.getElementById("locationInput").value = locationForDate;
 
   if (locationForDate) {
-    const coordinates = { lat: -34.397, lng: 150.644 }; // Tọa độ tạm thời
+    const coordinates = { lat: -34.397, lng: 150.644 }; // Placeholder coordinates
     map.setCenter(coordinates);
   }
 
   document.getElementById("eventModal").style.display = "block";
 }
 
-// Đóng cửa sổ modal
+// Close modal
 function closeModal() {
   document.getElementById("eventModal").style.display = "none";
 }
 
-// Lưu sự kiện
+// Save event
 function saveEvent() {
   const eventDetail = document.getElementById("eventInput").value;
   const eventLocation = document.getElementById("locationInput").value;
@@ -67,7 +59,29 @@ function saveEvent() {
   renderCalendar(currentMonth, currentYear);
 }
 
-// Lên lịch thông báo
+// Edit event
+function editEvent() {
+  // Logic for editing event will go here
+  const eventDetail = document.getElementById("eventInput").value;
+  const eventLocation = document.getElementById("locationInput").value;
+  if (eventDetail || eventLocation) {
+    events[selectedDate] = { detail: eventDetail, location: eventLocation };
+  }
+  renderCalendar(currentMonth, currentYear);
+  closeModal();
+}
+
+// Delete event
+function deleteEvent() {
+  if (events[selectedDate]) {
+    delete events[selectedDate];
+  }
+  renderCalendar(currentMonth, currentYear);
+  closeModal();
+}
+
+
+// Schedule notifications
 function scheduleNotification(eventDetail) {
   if (Notification.permission !== 'granted') {
     Notification.requestPermission();
@@ -80,7 +94,7 @@ function scheduleNotification(eventDetail) {
   }
 }
 
-// Truy xuất thông tin thời tiết
+// Fetch weather information
 function fetchWeather(location) {
   fetch('https://api.openweathermap.org/data/2.5/weather?q=Hanoi&appid=4df5ba506cc21784a35d5eb06481a1e2&lang=vi')
     .then(response => response.json())
@@ -91,13 +105,13 @@ function fetchWeather(location) {
     .catch(error => console.error("Error fetching weather data:", error));
 }
 
-// Hiển thị lịch
+// Render calendar
 function renderCalendar(month, year) {
   let firstDay = new Date(year, month).getDay();
   let daysInMonth = 32 - new Date(year, month, 32).getDate();
 
   let table = document.getElementById("calendar");
-  table.innerHTML = "<tr><th>CN</th><th>T.2</th><th>T.3</th><th>T.4</th><th>T.5</th><th>T.6</th><th>T.7</th></tr>";
+  table.innerHTML = "<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>";
   
   let date = 1;
   for (let i = 0; i < 6; i++) {
@@ -113,7 +127,7 @@ function renderCalendar(month, year) {
         const fullDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
         cell.innerHTML = date;
         if (events[fullDate]) {
-          cell.innerHTML += "<br>" + events[fullDate].detail;
+          cell.innerHTML += `<div class='clickable-event' onclick='editExistingEvent("${fullDate}")'>${events[fullDate].detail}</div>`;
           cell.style.backgroundColor = "pink";
         }
         cell.onclick = function() { openModal(fullDate); };
@@ -127,7 +141,7 @@ function renderCalendar(month, year) {
   document.getElementById("monthYear").innerText = new Date(year, month).toLocaleString('default', { month: 'long' }) + " " + year;
 }
 
-// Điều hướng đến tháng trước và tháng sau
+// Navigate to previous and next months
 function prevMonth() {
   currentMonth--;
   if (currentMonth < 0) {
@@ -146,16 +160,16 @@ function nextMonth() {
   renderCalendar(currentMonth, currentYear);
 }
 
-// Yêu cầu quyền thông báo
+// Request notification permission
 if (Notification.permission !== 'granted') {
   Notification.requestPermission();
 }
 
-// Hiển thị ban đầu của lịch
+// Initial rendering of the calendar
 renderCalendar(currentMonth, currentYear);
 
 
-// Hàm để cập nhật thời gian hiện tại và ngày trong tuần
+// Function to update the current time and day of the week
 function updateTimeAndDay() {
   const now = new Date();
   const hours = String(now.getHours()).padStart(2, '0');
@@ -169,25 +183,25 @@ const currentWeekday = days[now.getDay()];
 document.getElementById("currentWeekday").innerText = "Hôm nay là : " + currentWeekday;
 }
 
-// Cập nhật thời gian và ngày mỗi giây
+// Update the time and day every second
 setInterval(updateTimeAndDay, 1000);
 
-// Cập nhật ban đầu
+// Initial update
 updateTimeAndDay();
 
 
-// Truy xuất và hiển thị thông tin thời tiết và nhiệt độ hiện tại bằng tiếng Việt
+// Fetch and display the current weather and temperature in Vietnamese
 function fetchAndDisplayWeatherVietnamese() {
   fetch('https://api.openweathermap.org/data/2.5/weather?q=Hanoi&appid=4df5ba506cc21784a35d5eb06481a1e2&lang=vi')
     .then(response => response.json())
     .then(data => {
       const weatherDescription = data.weather[0].description;
-      const temperature = Math.round(data.main.temp - 273.15);  // Chuyển đổi từ độ Kelvin sang độ Celsius
+      const temperature = Math.round(data.main.temp - 273.15);  // Convert from Kelvin to Celsius
       document.getElementById("currentWeather").innerText = "Thời tiết: " + weatherDescription;
       document.getElementById("currentTemperature").innerText = "Nhiệt độ: " + temperature + "°C";
     })
     .catch(error => console.error("Error fetching weather data:", error));
 }
 
-// Gọi hàm để truy xuất và hiển thị thông tin thời tiết bằng tiếng Việt
+// Call the function to fetch and display the weather in Vietnamese
 fetchAndDisplayWeatherVietnamese();

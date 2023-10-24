@@ -16,18 +16,31 @@
         <div class="can_chinh_tren">
 
             <button class="nut_tren">
-                <i class="fa-solid fa-shop"></i>
+                <a href="dang_nhap.php"><i class="fa-solid fa-shop"></i></a>
             </button>
             
             <audio controls autoplay>
                 <source src="audio.mp3" type="audio/mpeg">
             </audio>
 
+            <!--
             <button class="nut_tren">
                 <i class="fa-solid fa-circle-user"></i>
                 Xin chào, Trần Công Minh
             </button>
+            -->
             
+            <button class="userMenu">
+                <i class="fa-solid fa-circle-user"></i>
+                    Xin chào, Trần Công Minh
+                <div class="userDropdown">
+                    <a href="#">Đổi mật khẩu</a>
+                    <a href="#">Quản lý phân quyền</a>
+                    <a href="#">Trợ giúp</a>
+                    <a href="dang_nhap.php">Đăng xuất</a>
+                </div>
+            </button>
+
         </div>
     </div>
 <!----------------------------------------------------------------------------------------------------------------------------------------------->
