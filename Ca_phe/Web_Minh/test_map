@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trang Web của Tôi</title>
+</head>
+<body>
+
+<h1>Chào mừng đến với Trang Web của Tôi</h1>
+<p>Đây là bản đồ Google Maps nhúng:</p>
+
+<!-- Đây là mã nhúng từ Google Maps -->
+<iframe
+  width="600"
+  height="450"
+  style="border:0"
+  loading="lazy"
+  allowfullscreen
+  referrerpolicy="no-referrer-when-downgrade"
+  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29792.503908594977!2d106.7055459!3d20.826035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2svn!4v1658982287044!5m2!1svi!2svn">
+</iframe>
+
+</body>
+</html>
