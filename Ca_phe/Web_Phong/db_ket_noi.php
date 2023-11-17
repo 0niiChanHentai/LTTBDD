@@ -1,8 +1,8 @@
 <?php
-$db_host = 'localhost';  // Change to your database host
-$db_user = 'student';  // Change to your database username
-$db_pass = '123456';  // Change to your database password
-$db_name = 'quancaphe';  // Change to your database name
+$db_host = 'localhost';
+$db_user = 'student';
+$db_pass = '123456';
+$db_name = 'quancaphe';
 
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
 

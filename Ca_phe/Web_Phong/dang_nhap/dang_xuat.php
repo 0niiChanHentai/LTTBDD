@@ -3,11 +3,11 @@
     session_start();
 
     if (isset($_GET['username'])) {
-        $username = $_GET['username']; // receive the username value
+        $username = $_GET['username'];
     }
 
     if(isset($_SESSION['username'])){
-    // Lưu log đăng xuất
+    // Lưu đăng xuất
     $ten_tai_khoan = $_SESSION['username'];
     $action = 'Đăng xuất';
     $timestamp = date('Y-m-d H:i:s');

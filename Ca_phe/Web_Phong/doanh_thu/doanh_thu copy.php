@@ -23,10 +23,215 @@ try {
 } catch (Exception) {
     echo (' ERROR!');
 }
+
 ?>
-<!----------------------------------------------------------------------------------------------------------------------------------------->
-<?php include '../khung_giao_dien/tren.php'; ?>
-<!----------------------------------------------------------------------------------------------------------------------------------------->
+
+<?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: ../dang_nhap/dang_nhap.php");
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/giao_dien.css">
+    <link rel="stylesheet" href="../assets/css/doanh_thu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <a href="../doanh_thu/doanh_thu.php">
+        <img src="../assets/img/logo.png" class="logo">
+    </a>
+
+    <div class="tren_phai">
+        <div class="thanh_dieu_huong" style="padding-left: 5%">
+            <a href="../frontend/feindex.php">
+                <button class="nut1">
+                    <i class="fas fa-home"></i>
+                    <p>Trang chủ</p>
+                </button>
+            </a>
+            <button class="nut1">
+                <i class="fa-brands fa-tiktok"></i>
+                <p>TikTok</p>
+            </button>
+            <button class="nut1">
+                <i class="fa-brands fa-facebook"></i>
+                <p>Facebook</p>
+            </button>
+            <button class="nut1">
+                <i>Z</i>
+                <p>Zalo</p>
+            </button>
+            <button class="nut1">
+                <i class="fa-regular fa-envelope"></i>
+                <p>Email</p>
+            </button>
+            <audio controls autoplay>
+                <source src="../assets/img/audio.mp3" type="audio/mpeg">
+            </audio>
+            <button class="nut1">
+                <i class="fa-solid fa-circle-user"></i>
+                Xin chào, <?php echo $_SESSION['username']; ?>
+            </button>
+        </div>
+    </div>
+
+    <div class="duoi">
+
+        <div class="menu">
+            <!-------->
+            <div class="menu-container">
+                <a href="../san_pham/san_pham.php">
+                    <button class="nut_menu">
+                        <span class="khung_bieu_tuong">
+                            <i class="fas fa-coffee"></i>
+                        </span>
+                        Sản phẩm
+                    </button>
+                </a>
+
+                <!-- <a href="../doanh_thu/doanh_thu.php">
+                    <button class="nut_menu">
+                        <span class="khung_bieu_tuong">
+                            <i class="fas fa-chart-bar"></i>
+                        </span>
+                        Thống kê doanh thu
+                    </button>
+                </a> -->
+
+                <!-- <a href="your_link_here">
+                    <button class="nut_menu">
+                        <span class="khung_bieu_tuong">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </span>
+                        Tài chính
+                    </button>
+                </a> -->
+
+                <a href="../khach_hang/khach_hang.php">
+                    <button class="nut_menu">
+                        <span class="khung_bieu_tuong">
+                            <i class="fas fa-users"></i>
+                        </span>
+                        Khách hàng
+                    </button>
+                </a>
+
+                <a href="../don_hang/don_hang.php">
+                    <button class="nut_menu">
+                        <span class="khung_bieu_tuong">
+                            <i class="fas fa-clipboard-list"></i>
+                        </span>
+                        Đơn hàng
+                    </button>
+                </a>
+
+                <a href="../nguyen_lieu/nguyen_lieu.php">
+                    <button class="nut_menu">
+                        <span class="khung_bieu_tuong">
+                            <i class="fas fa-seedling"></i>
+                        </span>
+                        Nguyên liệu
+                    </button>
+                </a>
+
+                <a href="../nhap_hang/nhap_hang.php">
+                    <button class="nut_menu">
+                        <span class="khung_bieu_tuong">
+                            <i class="fa-solid fa-warehouse"></i>
+                        </span>
+                        Nhập nguyên liệu
+                    </button>
+                </a>
+
+                <a href="../xuat_hang/xuat_hang.php">
+                    <button class="nut_menu">
+                        <span class="khung_bieu_tuong">
+                            <i class="fa-solid fa-box"></i>
+                        </span>
+                        Xuất nguyên liệu
+                    </button>
+                </a>
+
+                <!-- <a href="your_link_here">
+                    <button class="nut_menu">
+                        <span class="khung_bieu_tuong">
+                            <i class="fas fa-tools"></i>
+                        </span>
+                        Vật tư
+                    </button>
+                </a> -->
+
+                <!-- <a href="your_link_here">
+                    <button class="nut_menu">
+                        <span class="khung_bieu_tuong">
+                            <i class="fas fa-business-time"></i>
+                        </span>
+                        Ca làm
+                    </button>
+                </a> -->
+
+                <a href="../nhan_vien/nhan_vien.php">
+                    <button class="nut_menu">
+                        <span class="khung_bieu_tuong">
+                            <i class="fas fa-user-tie"></i>
+                        </span>
+                        Nhân viên
+                    </button>
+                </a>
+
+                <a href="../thuong_phat/thuong_phat.php">
+                    <button class="nut_menu">
+                        <span class="khung_bieu_tuong">
+                            <i class="fas fa-trophy"></i>
+                        </span>
+                        Thưởng / phạt
+                    </button>
+                </a>
+
+                <a href="../quan_ly_tk/tai_khoan.php">
+                    <button class="nut_menu">
+                        <span class="khung_bieu_tuong">
+                            <i class="fas fa-user"></i>
+                        </span>
+                        Quản lý các tài khoản
+                    </button>
+                </a>
+            </div>
+
+            <div class="thanh_ngang"></div>
+            <a href="../dang_nhap/dang_xuat.php?username=<?php echo urlencode($_SESSION['username']); ?>">
+                <button class="nut_menu">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Đăng xuất
+                </button>
+            </a>
+
+            <!-------->
+        </div>
+
+        <div class="noi_dung">
+
+            <!--
+            <video controls autoplay width=80% height=100%>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+            -->
+
+            <!----------------------------------------------------------------------------------------------------------------------------------------------->
+            <div class="thong_ke">
+
                 <div class="khung_tren" style="margin-left: 2%">
                     <label class="title">HIỂN THỊ DOANH THU GẦN ĐÂY</label>
                     <a href="doanh_thu_loc.php">
@@ -362,8 +567,50 @@ try {
 
                     </html>
                 </div>
-<!----------------------------------------------------------------------------------------------------------------------------------------->
-<?php include '../khung_giao_dien/duoi_thong_ke.php'; ?>
-<!----------------------------------------------------------------------------------------------------------------------------------------->
+            </div>
+            <!----------------------------------------------------------------------------------------------------------------------------------------------->
+            <div class="ho_tro">
+                <div class="lich" style="padding-left:2%; width:100%">
+                    <!-- Your chart code for the past 7 days -->
+                    <h3>Biểu đồ doanh thu 7 ngày gần nhất:</h2>
+                        <canvas id="barChart7DaysLich" width="400" height="200"></canvas>
+
+                        <!-- Your chart code for the past 30 days -->
+                        <h3>Biểu đồ doanh thu 30 ngày gần nhất:</h2>
+                            <canvas id="lineChart30DaysLich" width="400" height="200"></canvas>
+
+                            <script>
+                                // Data for your bar chart (7 days) inside <div class="lich">
+                                var barChartLabels7DaysLich = <?php echo json_encode($recent7Days); ?>;
+                                var barChartData7DaysLich = <?php echo json_encode(array_values($total7Days)); ?>;
+                                createBarChart(barChartLabels7DaysLich, barChartData7DaysLich, 'Doanh thu ngày', 'barChart7DaysLich');
+
+                                // Data for your line chart (30 days) inside <div class="lich">
+                                var lineChartLabels30DaysLich = <?php echo json_encode($recent30Days); ?>;
+                                var lineChartData30DaysLich = <?php echo json_encode(array_values($total30Days)); ?>;
+                                createLineChart(lineChartLabels30DaysLich, lineChartData30DaysLich, 'Doanh thu ngày', 'lineChart30DaysLich');
+                            </script>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script src="../assets/js/doanh_thu.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
 </body>
+
+<script>
+    document.getElementById("themmoinv").addEventListener("click", function() {
+        window.location.href = "them_sp.php";
+    });
+
+    document.getElementById("xoabonv").addEventListener("click", function() {
+        window.location.href = "xoa_sp.php";
+    });
+</script>
+
 </html>
