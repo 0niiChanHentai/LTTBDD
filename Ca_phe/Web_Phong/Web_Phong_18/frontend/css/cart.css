@@ -1,0 +1,66 @@
+.cart{
+    margin-top: 50px;
+}
+
+.cart h2{
+    margin-left: 150px;
+    padding-top: 20px;
+    font-style: italic;
+}
+
+.list-cart{
+    margin-top: 50px;
+    padding: 0;
+}
+
+.list{
+    margin: auto;
+    width: 80%;
+    height: auto;
+}
+
+.list thead, tbody{
+    width: auto;
+    height: auto;
+    
+}
+
+.list td{
+    padding:7px;
+}
+
+.quantity{
+    border: none;
+    text-align: center;
+}
+
+.img-sp-cart{
+    width: 100px;
+    height:100px;
+}
+
+.total{
+    text-align:right;
+    margin-right: 200px;
+}
+
+.cash{
+    width: 150px;
+    height: 60px;
+    border-radius: 10px;
+    margin:auto;
+    display: block;
+}
+
+.cash:hover{
+    background-color: chocolate;
+    transition: 1s;
+}
+
+.info-check form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+}

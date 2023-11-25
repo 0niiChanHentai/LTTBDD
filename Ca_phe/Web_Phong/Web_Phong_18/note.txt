@@ -1,0 +1,2 @@
+Tạo bảng Hàng tồn (hang_ton) cấu trúc tương tự bảng nhap_hang và xuat_hang.
+Tạo chức năng Thêm, Sửa, Xóa  tương tự mục Nhập Hàng

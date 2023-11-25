@@ -1,0 +1,37 @@
+.context{
+    display: flex;
+    flex-direction: row;
+}
+
+.news-info{
+    float:left;
+    width: 70%;
+    padding-top: 10px;
+    margin: auto;
+}
+
+.news-info h1{
+    text-align: center;
+}
+
+.news-info img{
+    display: block;
+    margin: auto;
+}
+
+.noi-dung{
+    padding-top: 20px;
+}
+
+.related{
+    float: right;
+    width: 28%;
+    border-left: 1px solid brown;
+    height:auto;
+}
+
+.related ul li{
+    list-style: none;
+    text-align: left;
+    margin-left:-20px;
+}
