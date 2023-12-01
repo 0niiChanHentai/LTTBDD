@@ -130,8 +130,6 @@ if (isset($_POST["postvar"])) {
 <!----------------------------------------------------------------------------------------------------------------------------------------->
 <?php include '../khung_giao_dien/duoi.php'; ?>
 <!----------------------------------------------------------------------------------------------------------------------------------------->
-    <script src="../assets/js/nhan_vien.js" defer></script>
-
     <script>
         document.getElementById("themmoinv").addEventListener("click", function() {
             window.location.href = "them_nv.php";

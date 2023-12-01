@@ -13,7 +13,6 @@ $result = $conn->query($query);
 if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
     $phanquyen = $row['phanquyen'];
-
     if ($phanquyen !== '1') {
         header("Location: ../reject.php");
         exit();
@@ -26,7 +25,7 @@ include '../ket_noi.php';
 
 try {
     if (empty($_POST['submit'])) {
-        $sql = "SELECT tk.ten_tk, tk.pass, tk.pass, tk.id_tk, nv.hoten, pq.phan_quyen 
+        $sql = "SELECT tk.ten_tk, tk.pass, tk.id_tk, nv.hoten, pq.phan_quyen 
             FROM tai_khoan AS tk
             INNER JOIN nhan_vien AS nv ON tk.id_nhanvien = nv.id
             INNER JOIN phan_quyen AS pq ON tk.phanquyen = pq.id
@@ -56,15 +55,80 @@ try {
     echo (' ERROR!');
 }
 
-
 if (isset($_POST["mybutton"])) {
     echo $_POST["mybutton"];
 }
 
-
 if (isset($_POST["postvar"])) {
     echo $_POST["postvar"];
 }
+?>
+
+<?php
+require ('../vendor/autoload.php');
+
+use PhpOffice\PhpSpreadsheet\Reader\Xlsx as XlsxReader;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx as XlsxWriter;
+
+$servername = "localhost";
+$username = "student";
+$password = "123456";
+$dbname = "quancaphe";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+function importTaiKhoan($filePath, $conn) {
+    $reader = new XlsxReader();
+    $spreadsheet = $reader->load($filePath);
+    $worksheet = $spreadsheet->getActiveSheet();
+    $highestRow = $worksheet->getHighestRow();
+
+    for ($row = 2; $row <= $highestRow; $row++) {
+        $ten_tk = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
+        $pass = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
+        $phanquyen = $worksheet->getCellByColumnAndRow(3, $row)->getValue();
+        $id_nhanvien = $worksheet->getCellByColumnAndRow(4, $row)->getValue();
+        $ghichu = $worksheet->getCellByColumnAndRow(5, $row)->getValue();
+
+        $sql = "INSERT INTO tai_khoan (ten_tk, pass, phanquyen, id_nhanvien, ghichu) VALUES (?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssiss", $ten_tk, $pass, $phanquyen, $id_nhanvien, $ghichu);
+        $stmt->execute();
+    }
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['import']) && isset($_FILES['excelFile'])) {
+        if ($_FILES['excelFile']['error'] == 0) {
+            importTaiKhoan($_FILES['excelFile']['tmp_name'], $conn);
+            header('Location: ' . $_SERVER['PHP_SELF']);
+            exit;
+        }
+    }
+
+    if (isset($_POST['export'])) {
+        exportTaiKhoan($conn);
+        exit;
+    }
+}
+
+function getTaiKhoanData($conn) {
+    $sql = "SELECT * FROM tai_khoan";
+    $result = $conn->query($sql);
+    $taiKhoanData = [];
+    while ($row = $result->fetch_assoc()) {
+        array_push($taiKhoanData, $row);
+    }
+    return $taiKhoanData;
+}
+
+$taiKhoanData = getTaiKhoanData($conn);
+
 ?>
 <!----------------------------------------------------------------------------------------------------------------------------------------->
 <?php include '../khung_giao_dien/tren.php'; ?>
@@ -87,15 +151,22 @@ if (isset($_POST["postvar"])) {
                                 <input type="nhap" name="timKiem" placeholder="Nhập tên nhân viên">
                                 <button type="submit" name="submit" value="Tim Kiem">Tìm kiếm</button>
                             </form>
-                        </div> 
+                        </div>
+
+                        <input type="file" id="chonFileExcel" style="display:none;">
+                        <form method="post" action="tai_khoan_excel.php">
+                            <button type="submit" name="export_excel">Xuất Excel</button>
+                        </form>
 
                     </div>
 <!----------------->
                     <div class="khung_giua">
                         <button type="button" name="submit" id="themmoinv">Thêm</button>
-                        <button id="xuatExcel">Xuất Excel</button>
-                        <button id="nhapExcel">Nhập Excel</button>
-                        <input type="file" id="chonFileExcel" style="display:none;">
+                        <form method="post" enctype="multipart/form-data">
+                            <input type="file" name="excelFile" required>
+                            <input type="submit" name="import" value="Nhập Excel">
+                        </form>
+                        <table border="1"></table>
                     </div>
 <!----------------->
                     <div class="khung_duoi">
@@ -142,8 +213,6 @@ if (isset($_POST["postvar"])) {
 <!----------------------------------------------------------------------------------------------------------------------------------------->
 <?php include '../khung_giao_dien/duoi.php'; ?>
 <!----------------------------------------------------------------------------------------------------------------------------------------->
-    <script src="../assets/js/tai_khoan.js" defer></script>
-
     <script>
         document.getElementById("themmoinv").addEventListener("click", function() {
             window.location.href = "them_tk.php";

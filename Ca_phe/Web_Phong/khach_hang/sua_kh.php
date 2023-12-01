@@ -91,8 +91,6 @@ catch(Exception){
 <!----------------------------------------------------------------------------------------------------------------------------------------->
 <?php include '../khung_giao_dien/duoi.php'; ?>
 <!----------------------------------------------------------------------------------------------------------------------------------------->
-    <script src="../assets/js/khach_hang.js" defer></script>
-
     <script>
         function validateForm() {
             var khachHang = document.getElementsByName('idkh')[0];

@@ -71,8 +71,6 @@ catch(Exception){
 <!----------------------------------------------------------------------------------------------------------------------------------------->
 <?php include '../khung_giao_dien/duoi.php'; ?>
 <!----------------------------------------------------------------------------------------------------------------------------------------->
-    <script src="nhaphang.js" defer></script>
-
     <script>
         function confirmDelete() {
             var nhapHang = document.getElementsByName('idnhap_hang')[0];

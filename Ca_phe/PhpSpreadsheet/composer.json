@@ -1,0 +1,16 @@
+{
+    "name": "ca_phe/web_phong",
+    "description": "Day la do an quan ca phe",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "0niiChanHentai",
+            "email": "trancongminh14042001@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.29"
+    }
+}

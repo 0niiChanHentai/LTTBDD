@@ -71,8 +71,6 @@ catch(Exception){
 <!----------------------------------------------------------------------------------------------------------------------------------------->
 <?php include '../khung_giao_dien/duoi.php'; ?>
 <!----------------------------------------------------------------------------------------------------------------------------------------->
-    <script src="../assets/js/xuat_hang.js" defer></script>
-
     <script>
         function confirmDelete() {
             var xuatHang = document.getElementsByName('idxuat_hang')[0];

@@ -178,7 +178,11 @@ th, td {
     font-size: 18px;
 }
 
-/*
+.tim_kiem_them .input-timkiem,
+.tim_kiem_them .button-timkiem {
+    margin-right: 10px;
+}
+
 .tim_kiem_them input[type="nhap"] {
     padding: 10px;
     width: 80%;
@@ -186,7 +190,6 @@ th, td {
     border-radius: 5px;
 
 }
-*/
 
 .tim_kiem_them button {
     padding: 10px 15px;
@@ -205,14 +208,14 @@ th, td {
 .khoang_cach {
     width: 10px;
 }
-/*
+
 .khung_tren {
     background-color: white;
     width: 100%;
     height: 5%;
     text-align: center;
 }
-*/
+
 .khung_giua {
     display: flex;
     flex-direction: row;
@@ -297,26 +300,4 @@ th, td {
 #xuatExcel i, #nhapExcel i, #themmoinv i, #xoabonv i {
     margin-right: 5px;
     font-size: 1.2em;
-}
-.tim_kiem_them .input-timkiem,
-.tim_kiem_them .button-timkiem {
-    margin-right: 10px; /* Thêm khoảng cách bên phải 10px */
-}
-
-.chu {
-    color: black;
-    font-size: 18px;
-}
-
-.tim_kiem_them input[type="nhap"] {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.khung_tren {
-    background-color: white;
-    width: 100%;
-    height: 22%;
-    text-align: center;
 }

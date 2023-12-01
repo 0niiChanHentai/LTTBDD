@@ -225,8 +225,6 @@ try {
 <!----------------------------------------------------------------------------------------------------------------------------------------->
 <?php include '../khung_giao_dien/duoi.php'; ?>
 <!----------------------------------------------------------------------------------------------------------------------------------------->
-    <script src="../assets/js/nhap_hang.js" defer></script>
-
     <script>
         document.getElementById("themmoinv").addEventListener("click", function() {
             window.location.href = "them_nh.php";
