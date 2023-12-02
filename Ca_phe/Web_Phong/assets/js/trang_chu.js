@@ -79,3 +79,13 @@ document.getElementById("currentWeekday").innerText = "Hôm nay là: " + current
 setInterval(updateTimeAndDay, 1000);
 
 updateTimeAndDay();
+
+let timeout;
+const resetTimer = () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+        window.location.href = ("../don_hang/don_hang.php");
+    }, 10 * 60 * 1000);  // 10 minutes
+};
+document.addEventListener('mousemove', resetTimer);
+resetTimer();

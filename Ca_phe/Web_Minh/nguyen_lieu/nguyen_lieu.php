@@ -84,9 +84,6 @@ try {
 <!----------------->
                     <div class="khung_giua">
                         <button type="button" name="submit" id="themmoinv">Thêm</button>
-                        <button id="xuatExcel">Xuất Excel</button>
-                        <button id="nhapExcel">Nhập Excel</button>
-                        <input type="file" id="chonFileExcel" style="display:none;">
                     </div>
 <!----------------->
                     <div class="khung_duoi">
@@ -221,8 +218,6 @@ try {
 <!----------------------------------------------------------------------------------------------------------------------------------------->
 <?php include '../khung_giao_dien/duoi.php'; ?>
 <!----------------------------------------------------------------------------------------------------------------------------------------->
-    <script src="../assets/js/nhap_hang.js" defer></script>
-
     <script>
             document.getElementById("themmoinv").addEventListener("click", function() {
             window.location.href = "them_nl.php";

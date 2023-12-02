@@ -57,6 +57,56 @@ if (isset($_POST["postvar"])) {
     echo $_POST["postvar"];
 }
 ?>
+<?php
+require ('../vendor/autoload.php');
+
+use PhpOffice\PhpSpreadsheet\Reader\Xlsx as XlsxReader;
+
+$servername = "localhost";
+$username = "student";
+$password = "123456";
+$dbname = "quancaphe";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+function importNhanVien($filePath, $conn) {
+    $reader = new XlsxReader();
+    $spreadsheet = $reader->load($filePath);
+    $worksheet = $spreadsheet->getActiveSheet();
+    $highestRow = $worksheet->getHighestRow();
+
+    for ($row = 2; $row <= $highestRow; $row++) {
+        $hoten = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
+        $email = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
+        $dienthoai = $worksheet->getCellByColumnAndRow(3, $row)->getValue();
+        $ngaysinh = $worksheet->getCellByColumnAndRow(4, $row)->getValue();
+        $gioitinh = $worksheet->getCellByColumnAndRow(5, $row)->getValue();
+        $diachi = $worksheet->getCellByColumnAndRow(6, $row)->getValue();
+        $anh_nv = $worksheet->getCellByColumnAndRow(7, $row)->getValue();
+        $vitri = $worksheet->getCellByColumnAndRow(8, $row)->getValue();
+        $luong = $worksheet->getCellByColumnAndRow(9, $row)->getValue();
+
+        $sql = "INSERT INTO nhan_vien (hoten, email, dienthoai, ngaysinh, gioitinh, diachi, anh_nv, vitri, luong) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssssssssi", $hoten, $email, $dienthoai, $ngaysinh, $gioitinh, $diachi, $anh_nv, $vitri, $luong);
+        $stmt->execute();
+    }
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['import']) && isset($_FILES['excelFile'])) {
+        if ($_FILES['excelFile']['error'] == 0) {
+            importNhanVien($_FILES['excelFile']['tmp_name'], $conn);
+            header('Location: ' . $_SERVER['PHP_SELF']);
+            exit;
+        }
+    }
+}
+?>
 <!----------------------------------------------------------------------------------------------------------------------------------------->
 <?php include '../khung_giao_dien/tren.php'; ?>
 <!--------------------------------------------------------Chèn thêm CSS bên dưới----------------------------------------------------------->
@@ -76,13 +126,20 @@ if (isset($_POST["postvar"])) {
                             </form>
                         </div>
 
+                        <input type="file" id="chonFileExcel" style="display:none;">
+                        <form method="post" action="nhan_vien_excel.php">
+                            <button type="submit" name="export_excel">Xuất Excel</button>
+                        </form>
+
                     </div>
 <!----------------->
                     <div class="khung_giua">
                         <button type="button" name="submit" id="themmoinv">Thêm</button>
-                        <button id="xuatExcel">Xuất Excel</button>
-                        <button id="nhapExcel">Nhập Excel</button>
-                        <input type="file" id="chonFileExcel" style="display:none;">
+                        <form method="post" enctype="multipart/form-data">
+                            <input type="file" name="excelFile" required>
+                            <input type="submit" name="import" value="Nhập Excel">
+                        </form>
+                        <table border="1"></table>
                     </div>
 <!----------------->
                     <div class="khung_duoi">
@@ -137,8 +194,6 @@ if (isset($_POST["postvar"])) {
 <!----------------------------------------------------------------------------------------------------------------------------------------->
 <?php include '../khung_giao_dien/duoi.php'; ?>
 <!----------------------------------------------------------------------------------------------------------------------------------------->
-    <script src="../assets/js/nhan_vien.js" defer></script>
-
     <script>
         document.getElementById("themmoinv").addEventListener("click", function() {
             window.location.href = "them_nv.php";

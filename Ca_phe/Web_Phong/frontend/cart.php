@@ -11,7 +11,7 @@
         <div class="wrapper">
             <div class="top_page">
                 <?php
-                    include "same/menu.php";
+                    include "../frontend/same/menu.php";
                 ?>
             </div> 
             <div class="cart">
@@ -25,11 +25,11 @@
                         <table class="list">
                             <thead>
                                 <td>STT</td>
-                                <td>Ten san pham</td>
-                                <td>Hinh anh</td>
-                                <td>So luong</td>
-                                <td>Don gia</td>
-                                <td>Chuc nang</td>
+                                <td>Tên sản phẩm</td>
+                                <td>Hình ảnh</td>
+                                <td>Số lượng</td>
+                                <td>Đơn giá</td>
+                                <td>Chức năng</td>
                             </thead>
                             <?php 
                                 $tong=0;
@@ -46,10 +46,10 @@
                                 <td class="tensp"><?php echo $val[1]?></td>
                                 <td class="hinhanh"><img src="../frontend/picture/<?php echo $val[2]?>" class="img-sp-cart"></td>
                                 <td>
-                                    <input type="text" name="quantity" class="quantity" onchange="newqty(<?php echo $stt?>)" value="<?php echo $val[3]?>" disabled>
+                                    <input type="text" name="quantity" class="quantity" style="background-color:white;" onchange="newqty(<?php echo $stt?>)" value="<?php echo $val[3]?>" disabled>
                                 </td>
-                                <td class="price"><?php echo ($val[4])?></td>
-                                <td><button type="button" class="del-sp"><a href="del.php?id=<?php echo $stt-1 ?>">Xoa</a></button></td>
+                                <td class="price"><?php echo number_format((int)$val[4])?></td>
+                                <td><button type="button" class="del-sp"><a href="del.php?id=<?php echo $stt ?>">Xóa</a></button></td>
                             </tbody>   
                             <?php
                                     $stt++;
@@ -61,12 +61,12 @@
                         <br>
                         <h1 style="width:80%;text-align:right">
                             Tổng tiền : 
-                            <strong id="total"><?php echo ($tong)?></strong>
+                            <strong id="total"><?php echo number_format((int)$tong)?></strong>
                             VND
                         </h1>
                         <br>
                         
-                        <button class="cash" name="cash">Thanh toan ngay</button>
+                        <button class="cash" name="cash">Thanh toán ngay</button>
                         <br>
                     </div>
                 </form>

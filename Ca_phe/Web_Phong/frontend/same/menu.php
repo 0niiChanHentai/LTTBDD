@@ -28,6 +28,9 @@
             <a href="../frontend/voucher.php">Voucher</a>
         </div>
         <div class="menu">
+            <a href="../frontend/complain.php">Góp ý</a>
+        </div>
+        <div class="menu">
             <a href="../frontend/contact.php">Liên hệ</a>
         </div>
         <div class="menu-last">
@@ -35,6 +38,20 @@
         </div>
     </div>
     <div class="action">
-        <a href="../frontend/cart.php"><img src="../frontend/picture/cart.jpg" alt="cart-icon" width="50px" height="50px"></a>
+        <a href="../frontend/cart.php"><img src="../frontend/picture/cart.jpg" alt="cart-icon" width="40px" height="40px">
+            <h3><?php
+                session_start();
+                if(empty($_SESSION['cart'])){
+                    echo 0;
+                }else{
+                    $vl = 0;
+                    for($i=0;$i<sizeof($_SESSION['cart']);$i++){
+                        $vl += $_SESSION['cart'][$i][3];
+                    }
+                    echo $vl;
+                }
+                session_abort();
+            ?></h3>
+        </a>
     </div>
 </div>

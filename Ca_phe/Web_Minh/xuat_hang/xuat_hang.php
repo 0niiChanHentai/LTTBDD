@@ -47,6 +47,51 @@ try {
     echo (' ERROR!');
 }
 ?>
+<?php
+require ('../vendor/autoload.php');
+
+use PhpOffice\PhpSpreadsheet\Reader\Xlsx as XlsxReader;
+
+$servername = "localhost";
+$username = "student";
+$password = "123456";
+$dbname = "quancaphe";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+function importXuatHang($filePath, $conn) {
+    $reader = new XlsxReader();
+    $spreadsheet = $reader->load($filePath);
+    $worksheet = $spreadsheet->getActiveSheet();
+    $highestRow = $worksheet->getHighestRow();
+
+    for ($row = 2; $row <= $highestRow; $row++) {
+        $danhsachsp = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
+        $thoigianxuat = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
+        $ghichu = $worksheet->getCellByColumnAndRow(3, $row)->getValue();
+        $ghichu = $ghichu !== NULL ? $ghichu : ''; // Gán giá trị mặc định nếu NULL
+
+        $sql = "INSERT INTO xuat_hang (danhsachsp, thoigianxuat, ghichu) VALUES (?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sss", $danhsachsp, $thoigianxuat, $ghichu);
+        $stmt->execute();
+    }
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['import']) && isset($_FILES['excelFile'])) {
+        if ($_FILES['excelFile']['error'] == 0) {
+            importXuatHang($_FILES['excelFile']['tmp_name'], $conn);
+            header('Location: ' . $_SERVER['PHP_SELF']);
+            exit;
+        }
+    }
+}
+?>
 <!----------------------------------------------------------------------------------------------------------------------------------------->
 <?php include '../khung_giao_dien/tren.php'; ?>
 <!--------------------------------------------------------Chèn thêm CSS bên dưới----------------------------------------------------------->
@@ -66,13 +111,20 @@ try {
                             </form>
                         </div>
 
+                        <input type="file" id="chonFileExcel" style="display:none;">
+                        <form method="post" action="xuat_hang_excel.php">
+                            <button type="submit" name="export_excel">Xuất Excel</button>
+                        </form>
+
                     </div>
 <!----------------->
                     <div class="khung_giua">
                         <button type="button" name="submit" id="themmoinv">Thêm</button>
-                        <button id="xuatExcel">Xuất Excel</button>
-                        <button id="nhapExcel">Nhập Excel</button>
-                        <input type="file" id="chonFileExcel" style="display:none;">
+                        <form method="post" enctype="multipart/form-data">
+                            <input type="file" name="excelFile" required>
+                            <input type="submit" name="import" value="Nhập Excel">
+                        </form>
+                        <table border="1"></table>
                     </div>
 <!----------------->
                     <div class="khung_duoi">

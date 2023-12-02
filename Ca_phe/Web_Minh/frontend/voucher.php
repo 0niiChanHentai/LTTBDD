@@ -10,12 +10,12 @@
         <div class="wrapper">
             <div class="top_page">
                 <?php
-                    include "same/menu.php";
+                    include "../frontend/same/menu.php";
                 ?>
             </div>   
             <div class="slider">
                 <?php
-                    include "same/slider.php";
+                    include "../frontend/same/slider.php";
                 ?>
                 <script src="../frontend/js/slider.js"></script>
             </div>      
@@ -42,9 +42,12 @@
                         $td = date('Y/m/d');
                         $today = new DateTime($td);
                         $expire = new DateTime($row['hsd']);  
+                        $qty = $row['qty'];
                             if($expire < $today) {
                                 echo 'Expired';
-                            } else {
+                            } else if($expire>$today && $qty==0){
+                                echo 'Hết Voucher';
+                            }else {
                                 echo"$row[hsd]";
                             }
                         }

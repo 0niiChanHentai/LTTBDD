@@ -11,57 +11,65 @@
         <div class="wrapper">
             <div class="top_page">
                 <?php
-                    include "same/menu.php";
+                    include "../frontend/same/menu.php";
                 ?>
             </div> 
             <div class="cart">
-                <h2>Giỏ hàng | <a href="">Đơn đang giao</a> | <a href="">Đơn đã hoàn thành</a></h2>
-                <div class="list-cart">
-                    <?php
-                        session_start();
-                        if($_SESSION['cart'] != null){ 
-                    ?>
-                    <table class="list">
-                        <thead>
-                            <td>STT</td>
-                            <td>Ten san pham</td>
-                            <td>Hinh anh</td>
-                            <td>So luong</td>
-                            <td>Don gia</td>
-                            <td>Chuc nang</td>
-                        </thead>
-                        <?php 
-                            $tong=0;
-                            $stt=1;
-                            foreach($_SESSION['cart'] as $val){
-                                $gtsp=$val[3]*$val[4];
-                                $tong+=$gtsp;   
-                        ?>
-                        <tbody>
-                            <td><?php echo $stt?></td>
-                            <td><?php echo $val[1]?></td>
-                            <td><img src="../frontend/picture/<?php echo $val[2]?>" class="img-sp-cart"></td>
-                            <td>
-                                <span>
-                                    <!-- <button class="decrease" onclick="decrease">-</button> -->
-                                    &ensp;<?php echo $val[3] ?>&ensp;
-                                    <!-- <button class="increase" onclick="increase">+</button> -->
-                                </span>
-                            </td>
-                            <td id="price"><?php echo $val[4]?> VND</td>
-                            <td><button type="button" class="del-sp"><a href="del.php?id=<?php echo $stt-1 ?>">Xoa</a></button></td>
-                        </tbody>
-                        
+                <h2>Giỏ hàng |<a href="../frontend/checkout.php">Tiến trình các đơn hàng</a></h2>
+                <form action="order.php" method="post">
+                    <div class="list-cart">
                         <?php
-                                $stt++;
-                            }
+                            session_start();
+                            if(!empty($_SESSION['cart'])){ 
                         ?>
-                    </table>
-                </div>
-                <div>
-                    <h2 class="total">Tong tien: <?php echo $tong?> VND</h2>
-                    <button type="button" class="cash"><a href="../frontend/order.php">Thanh toan ngay</a></button>
-                </div>
+                        <table class="list">
+                            <thead>
+                                <td>STT</td>
+                                <td>Tên sản phẩm</td>
+                                <td>Hình ảnh</td>
+                                <td>Số lượng</td>
+                                <td>Đơn giá</td>
+                                <td>Chức năng</td>
+                            </thead>
+                            <?php 
+                                $tong=0;
+                                $stt=0;
+                                foreach($_SESSION['cart'] as $val){
+                                    $gtsp=$val[3]*$val[4];
+                                    $tong+=$gtsp;  
+                            ?>
+                            <tbody>
+                                <input type="hidden" value="<?php echo $val[1]?>" name="tensp">
+                                <input type="hidden" value="<?php echo $val[2]?>" name="hinhanh">
+                                <input type="hidden" value="<?php echo $val[4]?>" name="price">
+                                <td><?php echo $stt+1?></td>
+                                <td class="tensp"><?php echo $val[1]?></td>
+                                <td class="hinhanh"><img src="../frontend/picture/<?php echo $val[2]?>" class="img-sp-cart"></td>
+                                <td>
+                                    <input type="text" name="quantity" class="quantity" style="background-color:white;" onchange="newqty(<?php echo $stt?>)" value="<?php echo $val[3]?>" disabled>
+                                </td>
+                                <td class="price"><?php echo number_format((int)$val[4])?></td>
+                                <td><button type="button" class="del-sp"><a href="del.php?id=<?php echo $stt ?>">Xóa</a></button></td>
+                            </tbody>   
+                            <?php
+                                    $stt++;
+                                }
+                            ?>
+                        </table>
+                    </div>
+                    <div>
+                        <br>
+                        <h1 style="width:80%;text-align:right">
+                            Tổng tiền : 
+                            <strong id="total"><?php echo number_format((int)$tong)?></strong>
+                            VND
+                        </h1>
+                        <br>
+                        
+                        <button class="cash" name="cash">Thanh toán ngay</button>
+                        <br>
+                    </div>
+                </form>
                 <?php
                     }else{
                         ?>

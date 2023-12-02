@@ -11,12 +11,12 @@
         <div class="wrapper">
             <div class="top_page">
                 <?php
-                    include "same/menu.php";
+                    include "../frontend/same/menu.php";
                 ?>
             </div>          
             <div class="slider">
                 <?php
-                    include "same/slider.php";
+                    include "../frontend/same/slider.php";
                 ?>
                 <script src="../frontend/js/slider.js"></script>
             </div>
@@ -149,12 +149,19 @@
                                 showRates(rateIndex);
                             }
 
+                            function autoRates(n){
+                                showRates(n);
+                            }
+
                             showRates(rateIndex);
                         </script>
                     </div>
                 </div>
             </div> 
             <br><br>
+            <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3729.0523828781725!2d106.68701387433309!3d20.8295910945914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314a71e10a700d3d%3A0xf727ddd15e8b33e8!2zTeG7mWMgQ2FmZQ!5e0!3m2!1svi!2s!4v1701148346520!5m2!1svi!2s" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
             <div class="footer">
                 <div class="info">
                     <?php

@@ -34,6 +34,56 @@ try {
     echo (' ERROR!');
 }
 ?>
+<?php
+require ('../vendor/autoload.php');
+
+use PhpOffice\PhpSpreadsheet\Reader\Xlsx as XlsxReader;
+
+$servername = "localhost";
+$username = "student";
+$password = "123456";
+$dbname = "quancaphe";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+function importDonHang($filePath, $conn) {
+    $reader = new XlsxReader();
+    $spreadsheet = $reader->load($filePath);
+    $worksheet = $spreadsheet->getActiveSheet();
+    $highestRow = $worksheet->getHighestRow();
+
+    for ($row = 2; $row <= $highestRow; $row++) {
+        $danhsachsp = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
+        $ghichu = $worksheet->getCellByColumnAndRow(5, $row)->getValue();
+        $ghichu = $ghichu !== NULL ? $ghichu : '';
+        $idkhach_hang = $worksheet->getCellByColumnAndRow(3, $row)->getValue();
+        $idnhan_vien = $worksheet->getCellByColumnAndRow(4, $row)->getValue();
+        $ten_kh = $worksheet->getCellByColumnAndRow(5, $row)->getValue();
+        $thoigianlap = $worksheet->getCellByColumnAndRow(6, $row)->getValue();
+        $tongcong = $worksheet->getCellByColumnAndRow(7, $row)->getValue();
+        $status = $worksheet->getCellByColumnAndRow(8, $row)->getValue();
+
+        $sql = "INSERT INTO don_hang (danhsachsp, ghichu, idkhach_hang, idnhan_vien, ten_kh, thoigianlap, tongcong, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssiiisii", $danhsachsp, $ghichu, $idkhach_hang, $idnhan_vien, $ten_kh, $thoigianlap, $tongcong, $status);
+        $stmt->execute();
+    }
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['import']) && isset($_FILES['excelFile'])) {
+        if ($_FILES['excelFile']['error'] == 0) {
+            importDonHang($_FILES['excelFile']['tmp_name'], $conn);
+            header('Location: ' . $_SERVER['PHP_SELF']);
+            exit;
+        }
+    }
+}
+?>
 <!----------------------------------------------------------------------------------------------------------------------------------------->
 <?php include '../khung_giao_dien/tren.php'; ?>
 <!--------------------------------------------------------Chèn thêm CSS bên dưới----------------------------------------------------------->
@@ -53,13 +103,20 @@ try {
                             </form>
                         </div>
 
+                        <input type="file" id="chonFileExcel" style="display:none;">
+                        <form method="post" action="don_hang_excel.php">
+                            <button type="submit" name="export_excel">Xuất Excel</button>
+                        </form>
+
                     </div>
 <!----------------->
                     <div class="khung_giua">
                         <button type="button" name="submit" id="themmoinv">Thêm</button>
-                        <button id="xuatExcel">Xuất Excel</button>
-                        <button id="nhapExcel">Nhập Excel</button>
-                        <input type="file" id="chonFileExcel" style="display:none;">
+                        <form method="post" enctype="multipart/form-data">
+                            <input type="file" name="excelFile" required>
+                            <input type="submit" name="import" value="Nhập Excel">
+                        </form>
+                        <table border="1"></table>
                     </div>
 <!----------------->
                     <div class="khung_duoi">

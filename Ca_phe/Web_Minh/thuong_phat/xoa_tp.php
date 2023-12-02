@@ -94,8 +94,6 @@ catch(Exception){
 <!----------------------------------------------------------------------------------------------------------------------------------------->
 <?php include '../khung_giao_dien/duoi.php'; ?>
 <!----------------------------------------------------------------------------------------------------------------------------------------->
-    <script src="../assets/js/nhan_vien.js" defer></script>
-    
     <script>
         function confirmDelete() {
             var donHang = document.getElementsByName('idtinh_huong')[0];

@@ -1,3 +1,18 @@
+<?php
+    // $conn = mysqli_connect("localhost","student","123456","quancaphe");
+    // $vou = 0;
+    // if(isset($_POST['apply'])){
+    //     $vou = '<script>
+    //                 document.writeln(sessionStorage.getItem("opt"));
+    //             </script>';
+    //     $sqlv = "SELECT gia_tri FROM 'voucher' WHERE 'ma_sale' LIKE '$vou'";
+    //     // echo $magg = mysqli_query($conn,$sqlv);
+    //     echo $magg = $conn->query($sqlv); 
+    // }else{
+    //     $gg=0;
+    // }
+?>
+
 <!DOCTYPE html>
     <head>
         <title>Mộc Cafe</title>
@@ -11,7 +26,7 @@
         <div class="wrapper">
             <div class="top_page">
                 <?php
-                    include "same/menu.php";
+                    include "../frontend/same/menu.php";
                 ?>
             </div> 
             <div class="cart">
@@ -29,6 +44,7 @@
                         <?php 
                             session_start();
                             $i=0;
+                            $gg=0;
                             $tong = 0;
                             $dssp = " ";
                             foreach($_SESSION['cart'] as $val){
@@ -47,7 +63,7 @@
                         ?>        
                     </table>
                     <div>
-                    <h2 class="total">Tổng tiền: <?php echo number_format($tong)?> VND</h2>
+                    <h2 class="total">Tổng tiền: <?php echo number_format((int)$tong - (int)$tong*(int)$gg/100);?> VND</h2>
                 </div>
                 </div>
                 
@@ -60,11 +76,17 @@
                         <input type="text" name="diachi" placeholder="Địa chỉ" required>
                         <textarea name="ghichu" placeholder="Ghi chú" cols='25' rows='4'></textarea>
                         <input type="hidden" name="danhsachsp" value="<?php echo $dssp?>"> 
-                        <input type="hidden" name="tongcong" value="<?php echo $tong?>">
+                        <!-- <input typye="hidden" name="voucher" value="<?php echo $vou?>"> -->
+                        <input type="hidden" name="tongcong" value="<?php echo ((int)$tong - (int)$tong*(int)$gg/100)?>">
+                        <select>
+                            <option>Thanh toán khi nhận hàng</option>
+                        </select>
+                        <button class="cash" type="submit" name="sent">Đặt hàng</button>
+                    </form>
+                    <!-- <form action="order.php" method="post">
                         <select id="magg" class="magg" name="magg">
-                            <option>-- Chọn Voucher --</option>
+                            <option value="0" selected>-- Chọn Voucher --</option>
                             <?php
-                                $conn = mysqli_connect("localhost","student","123456","quancaphe");
                                 $voucher = "SELECT * FROM voucher";
                                 $voucherquery = mysqli_query($conn,$voucher);
                                 $format = "Y-m-d";
@@ -72,24 +94,23 @@
                                 foreach($voucherquery as $sale){
                                     if(strtotime($sale['hsd'])>strtotime($date) && $sale['qty']>0){
                                         ?>
-                                        <option value="<?php echo $sale['gia_tri']?>"><?php echo $sale['ma_sale']?></option>
+                                        <option value="<?php echo $sale['ma_sale']?>"><?php echo $sale['ma_sale']?></option>
                                         <?php
                                     }
                                 }
                             ?>
                         </select>
-                        <select>
-                            <option>Thanh toán khi nhận hàng</option>
-                        </select>
-                        <button class="cash" name="sent">Đặt hàng</button>
-                    </form>
+                        <button type="submit" name="apply">Áp dụng voucher</button>
+                    </form> -->
                 </div>
-                <script>
-                    var magg = document.getElementById("magg");
+                <!-- <script>
+                    var magg = document.getElementById("magg"); 
                     magg.onchange = function(){
-                        magg.value = this.value;
+                        sessionStorage.clear();
+                        sessionStorage.setItem('opt',this.value);
+                        magg.value = sessionStorage.getItem('opt');
                     }
-                </script>
+                </script> -->
             </div>
         </div>
     </body>

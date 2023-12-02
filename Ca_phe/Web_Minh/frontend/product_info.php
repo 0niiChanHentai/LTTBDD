@@ -20,21 +20,28 @@
         <div class="wrapper">
             <div class="top_page">
                 <?php
-                    include "same/menu.php";
+                    include "../frontend/same/menu.php";
                 ?>
             </div>          
             <div class="slider">
                 <?php
-                    include "same/slider.php";
+                    include "../frontend/same/slider.php";
                 ?>
                 <script src="../frontend/js/slider.js"></script>
             </div>
             <div class="content">   
                 <div class="side-menu">
-                    <h2>Danh muc san pham</h2>
-                    <ul>Tat ca danh muc
-                        <li>Danh muc 1</li>
-                        <li>Danh muc 2</li>
+                    <h2>Danh mục sản phẩm</h2>
+                    <ul><li><a href="../frontend/product.php">Tất cả sản phẩm</a></li>
+                    <?php
+                        $danhmuc = "SELECT * FROM danh_muc";
+                        $dmquery = mysqli_query($conn, $danhmuc);
+                        foreach($dmquery as $dms){          
+                    ?>
+                        <li><a href="../frontend/product.php?id_danhmuc='<?php echo $dms['id_danhmuc']?>'"><?php echo $dms['ten_danhmuc'];?></a></li>
+                        <?php
+                            }
+                        ?> 
                     </ul>
                 </div>
                 <div class="inform">
@@ -43,7 +50,7 @@
                         <div class="descript">
                             <h1><?php echo $cols['tensp']?></h1>
                             <p>Don gia : <?php echo $cols['giathanh']?> VND</p>
-                            <textarea cols="80" rows="20"><?php echo $cols['mota']?></textarea>
+                            <p class="mota"><?php echo $cols['mota']?></p>
                             <form action="addtocart.php" method="post" >
                                 <div class="add-to-cart">
                                     <input type="hidden" name="ten_sanpham" value="<?php echo "$cols[tensp]"?>">
@@ -53,15 +60,12 @@
                                     <input type="number" name="quantity" min="1" max="999" value="1">
                                     <button class="add-cart" name="grab">Them vao gio hang</button>
                                 </div>
+                                <br/>
+
+                                    <button class="buy-now" name="buy">Mua ngay</button>
                             </form>
                         </br>
-                            <form action="buynow.php" method="post" >
-                                    <input type="hidden" name="ten_sanpham" value="<?php echo "$cols[tensp]"?>">
-                                    <input type="hidden" name="hinh_anh" value="<?php echo "$cols[hinhanh]"?>">
-                                    <input type="hidden" name="id" value="<?php echo "$cols[masp]"?>">
-                                    <input type="hidden" name="don_gia" value="<?php echo "$cols[giathanh]"?>">
-                                    <button class="buy-now" name="buy">Mua ngay</button>
-                            </form>    
+  
                         </br>
                         </div>
                     </div>
@@ -73,7 +77,7 @@
             <div class="sp-related">
                 <?php
                     $id_danhmuc = $cols['id_danhmuc'];
-                    $sqlrelate = "SELECT * FROM san_pham WHERE id_danhmuc = '$id_danhmuc' ";
+                    $sqlrelate = "SELECT * FROM san_pham WHERE id_danhmuc = '$id_danhmuc' AND masp != '$id  ' ";
                     $queryrelate = mysqli_query($conn, $sqlrelate);
                     foreach( $queryrelate as $related){
                         ?>

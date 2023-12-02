@@ -32,12 +32,12 @@
         <div class="wrapper">
             <div class="top_page">
                 <?php
-                    include "same/menu.php";
+                    include "../frontend/same/menu.php";
                 ?>
             </div>          
             <div class="slider">
                 <?php
-                    include "same/slider.php";
+                    include "../frontend/same/slider.php";
                 ?>
                 <script src="../frontend/js/slider.js"></script>
             </div>

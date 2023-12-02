@@ -50,11 +50,12 @@ try {
 <?php include '../khung_giao_dien/giua.php'; ?>
 <!----------------------------------------------------------------------------------------------------------------------------------------->
 <!----------------->
-                <!--
                     <div class="khung_tren">
-                        
+                    <input type="file" id="chonFileExcel" style="display:none;">
+                        <form method="post" action="don_hang_cho_khach_excel.php">
+                            <button type="submit" name="export_excel">Xuất Excel</button>
+                        </form>
                     </div>
-                -->
 <!----------------->
                     <div class="khung_giua">
                         <label class="title">THÊM THÔNG TIN ĐƠN HÀNG</label>

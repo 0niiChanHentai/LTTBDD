@@ -9,13 +9,17 @@
     text-align: center;
 }
 
+.side-menu ul li{
+    margin-left: -50px; 
+}
+
 
 .side-menu{
     width: 20%;
+    height: auto;
     list-style: none;
     display: inline-block;
     border:1px solid brown;
-    border-radius: 10px; 
 }
 
 .list-product{
@@ -34,6 +38,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    margin-top : 50px;
     
 }
 
@@ -64,3 +69,6 @@
     margin:2px;
 }
 
+.pathfinder{
+    margin-top: 10px;
+}

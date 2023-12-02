@@ -1,0 +1,38 @@
+.text{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.custom{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.cus-show{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding:0px;
+    border-radius:7px;
+    border: 1px solid chocolate;
+    margin-top:10px;
+}
+
+.cus-show img{
+    display: block;
+    float: left;
+    width: 150px;
+    height: 150px;
+    border-radius:10px;
+}
+
+.cus-show p{
+    text-align:center;
+}
+
+.cus-show h2{
+    text-align:center;
+}

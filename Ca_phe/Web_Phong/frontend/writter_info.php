@@ -20,12 +20,12 @@
         <div class="wrapper">
             <div class="top_page">
                 <?php
-                    include "same/menu.php";
+                    include "../frontend/same/menu.php";
                 ?>
             </div>          
             <div class="slider">
                 <?php
-                    include "same/slider.php";
+                    include "../frontend/same/slider.php";
                 ?>
                 <script src="../frontend/js/slider.js"></script>
             </div>
@@ -49,7 +49,7 @@
                         <h2>Các bài viết liên quan</h2>
                         <ul>
                             <?php
-                                $newsql= 'SELECT * FROM bai_viet ORDER BY id_baiviet ASC';
+                                $newsql= 'SELECT * FROM bai_viet ORDER BY id_baiviet ASC LIMIT 7 OFFSET 0';
                                 $newquery = mysqli_query($conn, $newsql);
                              
                                 foreach ($newquery as $col){

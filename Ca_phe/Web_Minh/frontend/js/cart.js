@@ -1,5 +1,7 @@
-let i = document.getElementById("quantity");
+// let quantity = document.getElementById("quantity");
 
-function increase(){
-    alert('1');
-}
+// function increase(i, n){
+//     var x = i.parentElement;
+//     n++;
+
+// }
