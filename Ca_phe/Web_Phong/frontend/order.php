@@ -1,17 +1,17 @@
-<?php
-    // $conn = mysqli_connect("localhost","student","123456","quancaphe");
-    // $vou = 0;
-    // if(isset($_POST['apply'])){
-    //     $vou = '<script>
-    //                 document.writeln(sessionStorage.getItem("opt"));
-    //             </script>';
-    //     $sqlv = "SELECT gia_tri FROM 'voucher' WHERE 'ma_sale' LIKE '$vou'";
-    //     // echo $magg = mysqli_query($conn,$sqlv);
-    //     echo $magg = $conn->query($sqlv); 
-    // }else{
-    //     $gg=0;
-    // }
-?>
+<!-- <?php
+    $conn = mysqli_connect("localhost","student","123456","quancaphe");
+    $vou = 0;
+    if(isset($_POST['apply'])){
+        echo $vou = '<script>
+                    document.writeln(sessionStorage.getItem("opt"));
+                </script>';
+        echo $sqlv = "SELECT gia_tri FROM voucher WHERE ma_sale LIKE '$vou'";
+        echo $magg = mysqli_query($conn,$sqlv);
+        //echo $magg = $conn->query($sqlv); 
+    }else{
+        $gg=0;
+    }
+?> -->
 
 <!DOCTYPE html>
     <head>

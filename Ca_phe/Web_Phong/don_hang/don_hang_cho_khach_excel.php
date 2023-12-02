@@ -4,10 +4,11 @@ require ('../vendor/autoload.php');
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 if (isset($_POST['export_excel'])) {
     $filePath = '../Mau_don_hang.xlsx';
-    $spreadsheet = IOFactory::load($filePath);
+    $spreadsheet = PhpOffice\PhpSpreadsheet\IOFactory::load($filePath);
     $sheet = $spreadsheet->getActiveSheet();
 
     $sql = "SELECT danhsachsp, ghichu, idkhach_hang, idnhan_vien, ten_kh, thoigianlap, tongcong, status FROM don_hang";
