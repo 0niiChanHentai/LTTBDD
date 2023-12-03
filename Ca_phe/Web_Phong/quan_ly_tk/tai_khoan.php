@@ -1,7 +1,9 @@
 <?php
+// Kết nối CSDL
 include('../db_ket_noi.php');
 session_start();
 
+// 
 if (!isset($_SESSION['username'])) {
     header("Location: ../dang_nhap/dang_nhap.php");
     exit();
@@ -71,16 +73,7 @@ use PhpOffice\PhpSpreadsheet\Reader\Xlsx as XlsxReader;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx as XlsxWriter;
 
-$servername = "localhost";
-$username = "student";
-$password = "123456";
-$dbname = "quancaphe";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include '../ket_noi.php';
 
 function importTaiKhoan($filePath, $conn) {
     $reader = new XlsxReader();
@@ -121,9 +114,11 @@ function getTaiKhoanData($conn) {
     $sql = "SELECT * FROM tai_khoan";
     $result = $conn->query($sql);
     $taiKhoanData = [];
-    while ($row = $result->fetch_assoc()) {
+
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         array_push($taiKhoanData, $row);
     }
+
     return $taiKhoanData;
 }
 
