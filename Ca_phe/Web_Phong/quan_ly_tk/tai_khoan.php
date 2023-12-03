@@ -103,27 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         }
     }
-
-    if (isset($_POST['export'])) {
-        exportTaiKhoan($conn);
-        exit;
-    }
 }
-
-function getTaiKhoanData($conn) {
-    $sql = "SELECT * FROM tai_khoan";
-    $result = $conn->query($sql);
-    $taiKhoanData = [];
-
-    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-        array_push($taiKhoanData, $row);
-    }
-
-    return $taiKhoanData;
-}
-
-$taiKhoanData = getTaiKhoanData($conn);
-
 ?>
 <!----------------------------------------------------------------------------------------------------------------------------------------->
 <?php include '../khung_giao_dien/tren.php'; ?>

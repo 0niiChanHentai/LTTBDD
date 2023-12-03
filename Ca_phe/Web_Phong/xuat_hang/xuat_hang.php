@@ -52,16 +52,7 @@ require ('../vendor/autoload.php');
 
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx as XlsxReader;
 
-$servername = "localhost";
-$username = "student";
-$password = "123456";
-$dbname = "quancaphe";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include '../ket_noi.php';
 
 function importXuatHang($filePath, $conn) {
     $reader = new XlsxReader();
