@@ -1,6 +1,6 @@
 <?php
     $conn=mysqli_connect("localhost","student","123456","quancaphe");
-
+    
     if(isset($_POST['sent'])){
         $tenkh=$_POST['ten_kh'];
         $sdtkh = $_POST['sdtkh'];
@@ -36,14 +36,16 @@
                 VALUES ('$danhsachsp','$ghichu','$idkh','$idnhan_vien','$tenkh','$date','$tongcong','$status')";
 
         $query3 = mysqli_query($conn,$sql3);
+        session_start();
         unset($_SESSION['cart']);
-    }else{
+        session_destroy();
+    }
         $khachhang = "SELECT * FROM don_hang ORDER BY iddon_hang ASC"; 
         $qkhachhang = mysqli_query($conn, $khachhang); 
         foreach($qkhachhang as $qkh){
             $idkh = $qkh['idkhach_hang'];
         }
-    }
+        // unset($_SESSION['cart']);
 ?>
 <!-- #-->
 <!DOCTYPE html>
@@ -59,7 +61,7 @@
         <div class="wrapper">
             <div class="top_page">
                 <?php
-                    include "same/menu.php";
+                    include "../frontend/same/menu.php";
                 ?>
             </div> 
             <div class="cart">
@@ -72,6 +74,7 @@
                                 <td>Tên khách hàng</td>
                                 <td>Danh sách sản phẩm</td>
                                 <td>Tổng thanh toán</td>
+                                <td>Ghi chú</td>
                                 <td>Trạng thái</td>
                             </thead>
                     <?php
@@ -86,6 +89,7 @@
                                 <td><?php echo $lst['ten_kh']?></td>
                                 <td><?php echo $lst['danhsachsp']?></td>
                                 <td><?php echo $lst['tongcong']?></td>
+                                <td><?php echo $lst['ghichu']?></td>
                                 <td><?php 
                                     if($lst['status'] = 0){
                                         echo "Hoàn thành";

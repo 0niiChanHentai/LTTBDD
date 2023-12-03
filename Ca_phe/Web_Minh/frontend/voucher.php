@@ -37,7 +37,7 @@
                     <tr>
                         <td><?php echo"$row[ma_sale]"; ?></td>
                         <td><?php echo"$row[ten_uu_dai]"; ?></td>
-                        <td><?php echo"$row[gia_tri]"; ?></td>
+                        <td><?php echo"$row[gia_tri]"; ?> %</td>
                         <td><?php
                         $td = date('Y/m/d');
                         $today = new DateTime($td);
