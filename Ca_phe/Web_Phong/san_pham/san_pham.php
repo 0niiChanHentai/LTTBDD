@@ -58,7 +58,7 @@ function importSanPham($filePath, $conn) {
         $phanloai = $worksheet->getCellByColumnAndRow(6, $row)->getValue();
         $id_danhmuc = $worksheet->getCellByColumnAndRow(7, $row)->getValue();
         $ghichu = $worksheet->getCellByColumnAndRow(8, $row)->getValue();
-        $ghichu = $ghichu !== NULL ? $ghichu : ''; // Gán giá trị mặc định nếu NULL
+        $ghichu = $ghichu !== NULL ? $ghichu : '';
 
         $sql = "INSERT INTO san_pham (tensp, giathanh, thanhphan, hinhanh, mota, phanloai, id_danhmuc, ghichu) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
