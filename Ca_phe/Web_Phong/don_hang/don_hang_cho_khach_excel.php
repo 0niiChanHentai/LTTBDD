@@ -14,17 +14,13 @@ if (isset($_POST['export_excel'])) {
     $sql = "SELECT danhsachsp, ghichu, idkhach_hang, idnhan_vien, ten_kh, thoigianlap, tongcong, status FROM don_hang";
     $result = $conn->query($sql);
 
-    $row = 10;
     while ($data = $result->fetch_assoc()) {
-        $sheet->setCellValue('A' . $row, $data['danhsachsp']);
-        $sheet->setCellValue('B' . $row, $data['ghichu']);
-        $sheet->setCellValue('C' . $row, $data['idkhach_hang']);
-        $sheet->setCellValue('D' . $row, $data['idnhan_vien']);
-        $sheet->setCellValue('E' . $row, $data['ten_kh']);
-        $sheet->setCellValue('F' . $row, $data['thoigianlap']);
-        $sheet->setCellValue('G' . $row, $data['tongcong']);
-        $sheet->setCellValue('H' . $row, $data['status']);
-        $row++;
+        $sheet->setCellValue('D7', $data['danhsachsp']);
+        $sheet->setCellValue('D8', $data['ghichu']);
+        $sheet->setCellValue('D5', $data['idnhan_vien']);
+        $sheet->setCellValue('D6', $data['ten_kh']);
+        $sheet->setCellValue('C3', $data['thoigianlap']);
+        $sheet->setCellValue('G3', $data['tongcong']);
     }
 
     $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');

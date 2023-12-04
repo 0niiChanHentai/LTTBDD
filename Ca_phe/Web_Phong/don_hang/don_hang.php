@@ -108,6 +108,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <button type="submit" name="export_excel">Xuất Excel</button>
                         </form>
 
+                        <input type="file" id="chonFileExcel" style="display:none;">
+                        <form method="post" action="don_hang_cho_khach_excel.php">
+                            <button type="submit" name="export_excel">Xuất đơn hàng</button>
+                        </form>
+
                     </div>
 <!----------------->
                     <div class="khung_giua">
