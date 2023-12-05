@@ -144,37 +144,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <tbody>
                                     <?php
                                     $rowNumber = 1;
+                                    $currentDate = date('Y-m-d');
                                     foreach ($result as $items) :
                                         $dateTime = explode(' ', $items['thoigianlap']);
+                                        $orderDate = date('Y-m-d', strtotime($dateTime[0]));
                                         $date = date('d-m-Y', strtotime($dateTime[0]));
                                         $time = $dateTime[1];
+                                        $isPastOrder = $currentDate > $orderDate;
                                     ?>
                                         <tr>
-                                            <td><?php echo ($rowNumber) ?></td>
-                                            <td><?php echo ($items['danhsachsp']) ?></td>
-                                            <td><?php echo ($items['tenkh']) ?></td>
-                                            <td><?php echo ($items['hoten']) ?></td>
-                                            <td><?php echo ($items['ten_kh']) ?></td>
-                                            <td>
-                                                <?php echo $date; ?><br>
-                                                <?php echo $time; ?>
-                                            </td>
-                                            <td><?php echo ($items['tongcong']) ?></td>
-                                            <td><?php echo ($items['ghichu']) ?></td>
-                                            <td>
-                                                <form action="sua_dh.php" method="post">
-                                                    <button type="submit" value="<?php echo ($items['iddon_hang']) ?>" name="buttonValue">S</button>
-                                                </form>
-                                            </td>
-                                            <td>
-                                                <form action="xoa_dh.php" method="post">
-                                                    <button type="submit" value="<?php echo ($items['iddon_hang']) ?>" name="buttonValue">X</button>
-                                                </form>
-                                            </td>
+                                            <td><?php echo $rowNumber; ?></td>
+                                            <td><?php echo $items['danhsachsp']; ?></td>
+                                            <td><?php echo $items['tenkh']; ?></td>
+                                            <td><?php echo $items['hoten']; ?></td>
+                                            <td><?php echo $items['ten_kh']; ?></td>
+                                            <td><?php echo $date . '<br>' . $time; ?></td>
+                                            <td><?php echo $items['tongcong']; ?></td>
+                                            <td><?php echo $items['ghichu']; ?></td>
+                                            <?php if (!$isPastOrder) : ?>
+                                                <td>
+                                                    <form action="sua_dh.php" method="post">
+                                                        <button type="submit" value="<?php echo $items['iddon_hang']; ?>" name="buttonValue">S</button>
+                                                    </form>
+                                                </td>
+                                                <td>
+                                                    <form action="xoa_dh.php" method="post">
+                                                        <button type="submit" value="<?php echo $items['iddon_hang']; ?>" name="buttonValue">X</button>
+                                                    </form>
+                                                </td>
+                                            <?php else : ?>
+                                                <td colspan="2">Không thể sửa/xóa</td>
+                                            <?php endif; ?>
                                         </tr>
                                     <?php
                                         $rowNumber++;
-                                    endforeach; ?>
+                                    endforeach;
+                                    ?>
                                 </tbody>
                             </table>
                         </div>

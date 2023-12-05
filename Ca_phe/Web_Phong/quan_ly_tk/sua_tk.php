@@ -16,18 +16,24 @@ try {
             $result[] = $row;
         }
     }
-    if (!empty($_POST['submit'])) {
+    if (!empty($_POST['phanquyen'])) {
+        $selectedQuyen = $_POST['phanquyen']; // Đây là một mảng
         $id_tk = $_POST['id_tk'];
-        $ten_tk = $_POST['ten_tk'];
-        $pass = $_POST['pass'];
-        $phanquyen = $_POST['phanquyen'];
-        $id_nhanvien = $_POST['id_nhanvien'];
-        $ghichu = $_POST['ghichu'];
 
-        $sql = "UPDATE tai_khoan SET ten_tk='$ten_tk',  pass='$pass', phanquyen='$phanquyen', id_nhanvien='$id_nhanvien', ghichu='$ghichu' WHERE id_tk='$id_tk'";
-        $stmt = $conn->prepare($sql);
-        $query = $stmt->execute();
-        header('location: tai_khoan.php');
+        // Xóa các quyền hạn cũ
+        $sqlDelete = "DELETE FROM nhan_vien_quyen WHERE id_nhanvien = :id_tk";
+        $stmtDelete = $conn->prepare($sqlDelete);
+        $stmtDelete->bindParam(':id_tk', $id_tk);
+        $stmtDelete->execute();
+
+        // Thêm quyền hạn mới
+        foreach ($selectedQuyen as $quyen) {
+            $sqlInsert = "INSERT INTO nhan_vien_quyen (id_nhanvien, id_phanquyen) VALUES (:id_tk, :quyen)";
+            $stmtInsert = $conn->prepare($sqlInsert);
+            $stmtInsert->bindParam(':id_tk', $id_tk);
+            $stmtInsert->bindParam(':quyen', $quyen);
+            $stmtInsert->execute();
+        }
     }
 } catch (Exception) {
     header('location: tai_khoan.php');
@@ -85,19 +91,17 @@ try {
                                     <?php endforeach; ?>
                                 </select><br>
 
-                                <label>Quyền hạn:</label>
-                                <select name="phanquyen" required>
-                                    <?php
-                                    $phanQuyenSql = "SELECT id, phan_quyen FROM phan_quyen ORDER BY phan_quyen ASC";
-                                    $phanQuyenStmt = $conn->prepare($phanQuyenSql);
-                                    $phanQuyenStmt->execute();
-                                    $phanQuyenResult = $phanQuyenStmt->fetchAll(PDO::FETCH_ASSOC);
-                                    foreach ($phanQuyenResult as $phanQuyen) : ?>
-                                        <option value="<?php echo htmlspecialchars($phanQuyen['id']); ?>">
-                                            <?php echo htmlspecialchars($phanQuyen['phan_quyen']); ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select><br>
+                                <label>Quyền hạn:</label><br>
+                                <?php
+                                $phanQuyenSql = "SELECT id, phan_quyen FROM phan_quyen ORDER BY phan_quyen ASC";
+                                $phanQuyenStmt = $conn->prepare($phanQuyenSql);
+                                $phanQuyenStmt->execute();
+                                $phanQuyenResult = $phanQuyenStmt->fetchAll(PDO::FETCH_ASSOC);
+                                foreach ($phanQuyenResult as $phanQuyen) {
+                                    echo '<input type="checkbox" name="phanquyen[]" value="'.htmlspecialchars($phanQuyen['id']).'"> ';
+                                    echo htmlspecialchars($phanQuyen['phan_quyen']).'<br>';
+                                }
+                                ?>
 
                                 <label>Ghi chú:</label>
                                 <input type="text" name="ghichu" value="(không)" required><br>
