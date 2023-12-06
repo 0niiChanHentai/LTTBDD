@@ -3,7 +3,6 @@
 include('../db_ket_noi.php');
 session_start();
 
-// 
 if (!isset($_SESSION['username'])) {
     header("Location: ../dang_nhap/dang_nhap.php");
     exit();
@@ -15,7 +14,20 @@ $result = $conn->query($query);
 if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
     $phanquyen = $row['phanquyen'];
-    if ($phanquyen !== '1') {
+
+    $accessQuery = "SELECT co_quyen_truy_cap FROM quyen_truy_cap WHERE phan_quyen_id = ? AND trang = 'tai_khoan.php'";
+    $accessStmt = $conn->prepare($accessQuery);
+    $accessStmt->bind_param("i", $phanquyen);
+    $accessStmt->execute();
+    $accessResult = $accessStmt->get_result();
+
+    if ($accessResult->num_rows > 0) {
+        $accessRow = $accessResult->fetch_assoc();
+        if (!$accessRow['co_quyen_truy_cap']) {
+            header("Location: ../reject.php");
+            exit();
+        }
+    } else {
         header("Location: ../reject.php");
         exit();
     }

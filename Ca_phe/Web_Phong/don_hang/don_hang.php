@@ -125,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
 <!----------------->
                     <div class="khung_duoi">
-                        <div id="content">
+                        <div id="content" class="cuon_ngang">
                             <table>
                                 <thead>
                                     <tr style="background-color: #c49967;">

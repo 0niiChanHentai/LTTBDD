@@ -1,0 +1,74 @@
+.content{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.side-menu h2{
+    text-align: center;
+}
+
+.side-menu ul li{
+    margin-left: -50px; 
+}
+
+
+.side-menu{
+    width: 20%;
+    height: auto;
+    list-style: none;
+    display: inline-block;
+    border:1px solid brown;
+}
+
+.list-product{
+    width: 78%;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-product .title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}   
+
+.list-product .list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top : 50px;
+    
+}
+
+.list .show{
+    border: 1px solid black;
+    border-collapse: collapse;
+    display: block;
+    padding:10px;
+    margin: 10px;
+}
+
+.list .show img{
+    display: block;
+    margin:auto;
+}
+
+.list .show p{
+    font-size: 20px;
+    text-align: center;
+}
+
+.do{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.do button{
+    margin:2px;
+}
+
+.pathfinder{
+    margin-top: 10px;
+}

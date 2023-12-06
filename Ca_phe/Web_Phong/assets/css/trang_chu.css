@@ -301,3 +301,9 @@ th, td {
     margin-right: 5px;
     font-size: 1.2em;
 }
+
+.cuon_ngang {
+    overflow-x: auto;
+    white-space: nowrap;
+    border: 1px solid black;/
+}
